@@ -1,5 +1,5 @@
 <?php
-  include('./passwords.inc.php');
+  include('./inc/passwords.inc.php');
   // Temp Data
   $login_status = rand(0,1);
   $options['db_host'] = 'localhost';
