@@ -8,7 +8,7 @@
     <script src="./assets/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <section class="container">
+    <section class="container-sm">
       <form mathod="post">
         <div class="mb-3">
           <label for="inputFirstname" class="form-label">Vorname</label>
