@@ -58,7 +58,6 @@
 
         <button type="submit" class="btn btn-primary">Installieren</button>
       </form>
-    <?php } ?>
     </section>
   </body>
 </html>
