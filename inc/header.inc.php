@@ -1,4 +1,6 @@
-<?php require('./inc/config.inc.php'); ?>
+<?php require('./inc/config.inc.php');
+$pdo = new PDO("mysql:host=$options['db_host'];$options['dbname']=$options['db_name']", $options['db_user'], $options['db_password']);
+?>
 <!DOCTYPE html>
 <html dir="ltr" lang="de-DE">
   <head>
@@ -47,7 +49,7 @@
 				  </ul>
 				</li>-->
 			  </ul>
-			  <form class="d-flex">
+			  <form class="d-flex" method="post">
         <?php if ($login_status == true) { ?>
           <button class="btn btn-outline-danger" type="submit">Ausloggen</button>
         <?php } else { ?>
