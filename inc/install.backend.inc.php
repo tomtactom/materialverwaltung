@@ -1,5 +1,4 @@
 <?php
-echo file_get_contents('./inc/import.sql');
 function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
@@ -41,7 +40,7 @@ $config["admin_cookie_hash"] = "'.generateRandomString(32).'";
 $pdo = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_password);');
 
       $query = file_get_contents('./inc/import.sql');
-      mysqli_query($connection,$query) or die('Problem beim Ausführen der SQL-Abfrage.');
+      mysqli_query($connection,$query); #or die('Problem beim Ausführen der SQL-Abfrage.');
       $msg = "Die grundlegenden Einstellungen konnten alle vorgenommen werden.";
       #unlink('./inc/install.backend.inc.php');
       #unlink('./inc/install.inc.php');
