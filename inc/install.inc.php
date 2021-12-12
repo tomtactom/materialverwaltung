@@ -11,7 +11,7 @@
   <body>
     <section class="container-sm" style="max-width: 540px;">
       <h1>Installation</h1>
-      <?php if(!empty($msg)) { echo "<div class="alert alert-primary" role="alert">".$msg."</div>"; } ?>
+      <?php if(!empty($msg)) { echo "<div class='alert alert-primary' role='alert'>".$msg."</div>"; } ?>
       <?php if ($show_form = true) { ?>
       <form mathod="post">
         <div class="mb-3">
