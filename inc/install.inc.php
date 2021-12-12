@@ -25,7 +25,7 @@
           <input type="text" name="password2" class="form-control" id="inputPassword2" aria-describedby="password2Help">
           <div id="password2Help" class="form-text">Dies dient dazu, dass man das richtige Passwort eingibt, falls man sich in einem Feld vertippt hat.</div>
         </div>
-
+        <hr>
         <div class="mb-3">
           <label for="inputHost" class="form-label">Datenbank Host</label>
           <input type="text" name="host" class="form-control" id="inputHost" aria-describedby="hostHelp">
@@ -35,7 +35,7 @@
         <div class="mb-3">
           <label for="inputDbname" class="form-label">Datenbank Name</label>
           <input type="text" name="database" class="form-control" id="inputDbname" aria-describedby="dbnameHelp">
-          <div id="dbnameHelp" class="form-text">Die MySQL-Datenbank muss vom Systemadministrator manuell erstellt werden.</div>
+          <div id="dbnameHelp" class="form-text">Die MySQL-Datenbank muss vom Systemadministrator manuell erstellt werden. Z. B. <i>materialmanagementsystem</i></div>
         </div>
 
         <div class="mb-3">
