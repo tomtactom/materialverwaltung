@@ -9,7 +9,6 @@
   </head>
   <body>
     <section class="container">
-      <?php if(!isset($_COOKIE['installation_name']) { ?>
       <form mathod="post">
         <div class="mb-3">
           <label for="inputFirstname" class="form-label">Vorname</label>
