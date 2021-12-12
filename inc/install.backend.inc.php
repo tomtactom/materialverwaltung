@@ -27,23 +27,23 @@ if (isset($_POST['install'])) {
   } else {
     $salt1 = generateRandomString();
     $salt2 = generateRandomString();
-    // Informationen in ./inc/config.inc.php schreiben
-    file_put_contents('./inc/config.inc.php', '<?php
-$config["mysqlhost"] = "'.$host.'";
-$config["mysqldatabase"] = "'.$database.'";
-$config["mysqlusername"] = "'.$mysqlusername.'";
-$config["mysqluserpassword"] = "'.$mysqluserpassword.'";
-$config["salt1"] = "'.$salt1.'";
-$config["salt2"] = "'.$salt2.'";
-$config["password"] = "'.hash('sha256', $salt1.$password.$salt2).'";
-$config["admin_cookie_hash"] = "'.generateRandomString(32).'";
-$pdo = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_password);');
       echo $connection->connect_error;
       $query = file_get_contents('./inc/import.sql');
       mysqli_query($connection,$query); #or die('Problem beim Ausführen der SQL-Abfrage.');
       $msg = "Die grundlegenden Einstellungen konnten alle vorgenommen werden.";
-      #unlink('./inc/install.backend.inc.php');
-      #unlink('./inc/install.inc.php');
+      // Informationen in ./inc/config.inc.php schreiben
+      file_put_contents('./inc/config.inc.php', '<?php
+  $config["mysqlhost"] = "'.$host.'";
+  $config["mysqldatabase"] = "'.$database.'";
+  $config["mysqlusername"] = "'.$mysqlusername.'";
+  $config["mysqluserpassword"] = "'.$mysqluserpassword.'";
+  $config["salt1"] = "'.$salt1.'";
+  $config["salt2"] = "'.$salt2.'";
+  $config["password"] = "'.hash('sha256', $salt1.$password.$salt2).'";
+  $config["admin_cookie_hash"] = "'.generateRandomString(32).'";
+  $pdo = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_password);');
+  #unlink('./inc/install.backend.inc.php');
+  #unlink('./inc/install.inc.php');
       header('Location: /');
 
     }
