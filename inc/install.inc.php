@@ -13,7 +13,7 @@
       <h1>Installation</h1>
       <?php if(!empty($msg)) { echo "<div class='alert alert-primary' role='alert'>".$msg."</div>"; } ?>
       <?php if ($show_form = true) { ?>
-      <form mathod="post">
+      <form method="post">
         <div class="mb-3">
           <label for="inputPassword" class="form-label">Passwort</label>
           <input type="text" name="password" class="form-control" id="inputPassword" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}$" aria-describedby="passwordHelp">
