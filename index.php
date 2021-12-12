@@ -1,4 +1,7 @@
-<?php require('./inc/header.inc.php'); ?>
+<?php
+  $options['sitetitle'] = 'Materialverwaltung';
+  require('./inc/header.inc.php');
+?>
       <h1>Suche</h1>
 
       <p>Beispiel für ein einfaches Suchformular.</p>
@@ -34,7 +37,4 @@
           </tr>
         </tbody>
       </table>
-    </section>
-  </body>
-
-</html>
+<?php require('./inc/footer.inc.php'); ?>

@@ -1,3 +1,4 @@
+<?php require('./inc/config.inc.php'); ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="de-DE">
   <head>
@@ -47,10 +48,13 @@
 				</li>-->
 			  </ul>
 			  <form class="d-flex">
-				<input class="form-control me-2" type="text" placeholder="Benutzername">
-				<input class="form-control me-2" type="password" placeholder="Passwort">
-				<button class="btn btn-outline-success" type="submit">Einloggen</button>
-				<button class="btn btn-outline-success" type="submit">Ausloggen</button>
+        <?php if (isset($login_status)) { ?>
+          <button class="btn btn-outline-danger" type="submit">Ausloggen</button>
+        <?php } else { ?>
+          <input class="form-control me-2" type="text" placeholder="Benutzername">
+  				<input class="form-control me-2" type="password" placeholder="Passwort">
+  				<button class="btn btn-outline-success" type="submit">Einloggen</button>
+        <?php } ?>
 			  </form>
 			</div>
 		  </div>
