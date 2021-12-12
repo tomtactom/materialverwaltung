@@ -9,15 +9,11 @@
   </head>
   <body>
     <section class="container-sm" style="max-width: 540px;margin-top: 100px;">
+      <h1>Installation</h1>
       <form mathod="post">
         <div class="mb-3">
-          <label for="inputFirstname" class="form-label">Vorname</label>
-          <input type="text" class="form-control" id="inputFirstname">
-        </div>
-
-        <div class="mb-3">
-          <label for="inputLastname" class="form-label">Nachname</label>
-          <input type="text" class="form-control" id="inputLastname">
+          <label for="inputUsername" class="form-label">Benutzername</label>
+          <input type="text" class="form-control" id="inputUsername">
         </div>
 
         <div class="mb-3">
