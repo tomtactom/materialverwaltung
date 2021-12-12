@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="de-DE">
   <head>
-    <title><?php if(!empty($options['sitetitle'])) { echo $options["title"]' | '; } ?>Materialverwaltungsystem</title>
+    <title><?php if(!empty($options['sitetitle'])) { echo $options["title"].' | '; } ?>Materialverwaltungsystem</title>
     <meta charset="UTF-8"/>
 
     <!-- Einbinden des Bootstrap-Stylesheets -->
