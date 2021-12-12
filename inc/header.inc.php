@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="de-DE">
   <head>
-    <title><?php if(!empty($options['sitetitle'])) { echo $options["title"].' | '; } ?>Materialverwaltungsystem</title>
+    <title><?php if(!empty($options['sitetitle'])) { echo $options["sitetitle"].' | '; } ?>Materialverwaltungsystem</title>
     <meta charset="UTF-8"/>
 
     <!-- Einbinden des Bootstrap-Stylesheets -->
@@ -48,7 +48,7 @@
 				</li>-->
 			  </ul>
 			  <form class="d-flex">
-        <?php if (isset($login_status)) { ?>
+        <?php if ($login_status == true) { ?>
           <button class="btn btn-outline-danger" type="submit">Ausloggen</button>
         <?php } else { ?>
           <input class="form-control me-2" type="text" placeholder="Benutzername">
