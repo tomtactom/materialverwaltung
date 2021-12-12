@@ -16,7 +16,7 @@
       <form method="post">
         <div class="mb-3">
           <label for="inputPassword" class="form-label">Passwort</label>
-          <input type="text" name="password" class="form-control" id="inputPassword" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}$" aria-describedby="passwordHelp">
+          <input type="text" name="password" class="form-control" id="inputPassword" pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}" aria-describedby="passwordHelp">
           <div id="passwordHelp" class="form-text">Das Passwort muss mindestens eine Zahl, einen Kleinbuchstaben, einen Großbuchstaben und ein Sonderzeichen enthalten und zwischen 8 und 32 Zeichen lang sein.</div>
         </div>
 
