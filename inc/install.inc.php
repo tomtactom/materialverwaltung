@@ -9,7 +9,7 @@
   </head>
   <body>
     <section class="container-sm">
-      <form mathod="post">
+      <form mathod="post" class="container-sm">
         <div class="mb-3">
           <label for="inputFirstname" class="form-label">Vorname</label>
           <input type="text" class="form-control" id="inputFirstname">
