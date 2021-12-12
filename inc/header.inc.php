@@ -1,3 +1,14 @@
+<?php
+  if(!file_exists('./inc/config.inc.php')) {
+    if(file_exists('./inc/install.inc.php')) {
+      require('./inc/install.inc.php');
+    } else {
+      die("<strong>Fehler:</strong> Die Konfigurationsdatei, und die Installationsdatei um die Konfigurationsdatei zu erstellen, konnten nicht gefunden werden.");
+    }
+    die();
+  }
+ ?>
+
 <?php require('./inc/config.inc.php');
 $pdo = new PDO("mysql:host=".$options['db_host'].";dbname=".$options['db_name'], $options['db_user'], $options['db_password']);
 ?>
