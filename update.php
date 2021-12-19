@@ -48,8 +48,8 @@ echo $_POST['table'];
       die("Fehler 0");
     }
 
-    if ($_POST['table'] != 'main' and $_POST['table'] != 'pack' and $_POST['table'] != 'product' and $_POST['table'] != 'section') {
-      die("Fehler 1");
+    if ($_POST['table'] != 'main' && $_POST['table'] != 'pack' && $_POST['table'] != 'product' && $_POST['table'] != 'section') {
+      die("Fehler 1: ".$_POST['table']);
     } else {
       $table = $_POST['table'];
     }
