@@ -33,6 +33,7 @@
     					$result = $statement->execute();
     					$count = 1;
     						while($row = $statement->fetch()) {
+                  print_r($row);
                 $pack_name = $pdo->prepare("SELECT `pack_name` FROM `pack` WHERE `row_id` = ".$row['pack_id']);
                 $product_name = $pdo->prepare("SELECT `product_name` FROM `product` WHERE `row_id` = ".$row['product_id']);
         				$pack_name->execute();
