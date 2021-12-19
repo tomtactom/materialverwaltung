@@ -59,6 +59,7 @@
   $result = $statement->execute();
   if ($result == true) {
    echo 1;
+   echo "UPDATE `".$table."` SET `".$entry."` = ".$value." WHERE `row_id` = ".$id;
  } else {
    die("Die Daten konnten nicht gespeichert werden.");
  }
