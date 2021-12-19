@@ -14,11 +14,11 @@ $(document).ready(function(){
   // Get edit id, field name and value
   var field_name = this.called;
 
-  var table = this.table;
-  var entry = this.entry;
+  var table = this.getAttribute('table');
+  var entry = this.getAttribute('entry');
   var value = this.value;
-  var id = this.rowid;
-  var securitycode = this.securitycode;
+  var id = this.getAttribute('rowid');
+  var securitycode = this.getAttribute('securitycode');
 
   // Hide Input element
   $(this).hide();
@@ -37,11 +37,6 @@ $(document).ready(function(){
          console.log('Erfolgreich gespeichert.');
       }else{
          console.log("Nicht gespeichert.");
-         console.log(table);
-         console.log(entry);
-         console.log(value);
-         console.log(id);
-         console.log(securitycode);
       }
    }
   });
