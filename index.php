@@ -19,8 +19,8 @@
         <table class="table table-striped table-bordered">
           <thead>
   					<tr>
-  						<th>Box</th>
-              <th></th>
+  						<th>Rucksack/Box</th>
+              <th>Fach</th>
   					</tr>
   				</thead>
   				<tbody>
@@ -34,7 +34,7 @@
   					?>
   					<tr>
   						<td><?php print_r($pack_name->fetch()['pack_name']); ?></td>
-              <td></td>
+              <td><?php if($row['compartment_name'] == false) { echo 'Allgemein'; } else { echo $row['compartment_name']; } ?></td>
             </tr>
           <?php } ?>
           </tbody>
