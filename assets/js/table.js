@@ -15,9 +15,9 @@ $(document).ready(function(){
   var id = this.rowid;
   var split_id = id.split("_");
   var field_name = this.called;
-  var securitycode = this.securitycode
-  var entry = this.entry
-  var table = this.table
+  var securitycode = this.securitycode;
+  var entry = this.entry;
+  var table = this.table;
 
   var value = this.value;
 
