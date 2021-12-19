@@ -3,7 +3,7 @@
   <input name="entry" value="pack_id">
   <input name="value" value="1">
   <input name="id" value="1">
-  <input name="securitycode" value="9afbeec43e32c3b24abcc1eb5940df354f45706d">
+  <input name="securitycode" value="<?php echo sha1($config["admin_cookie_hash"]); ?>">
   <input type="submit">
 </form>
 <?php
