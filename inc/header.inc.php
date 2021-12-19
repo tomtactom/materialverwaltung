@@ -24,6 +24,8 @@ $login_status = rand(0,1);
     <!-- Einbinden des Bootstrap-Stylesheets -->
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
 
+    <link href="./assets/css/main.css" rel="stylesheet">
+
     <!-- optional: Einbinden der jQuery-Bibliothek -->
     <script src="./assets/js/jquery-3.6.0.min.js"></script>
 
