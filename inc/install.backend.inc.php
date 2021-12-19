@@ -41,7 +41,7 @@ if (isset($_POST['install'])) {
   $config["salt2"] = "'.$salt2.'";
   $config["password"] = "'.hash('sha256', $salt1.$password.$salt2).'";
   $config["admin_cookie_hash"] = "'.generateRandomString(32).'";
-  $pdo = new PDO("mysql:host=$config[\'mysqlhost\'];dbname=$config[\'mysqldatabase\']", $config[\'mysqlusername\'], base64_decode($config[\'mysqluserpassword\']));');
+  $pdo = new PDO("mysql:host=".$config[\'mysqlhost\'].";dbname=".$config[\'mysqldatabase\'], $config[\'mysqlusername\'], base64_decode($config[\'mysqluserpassword\']));');
   #unlink('./inc/install.backend.inc.php');
   #unlink('./inc/install.inc.php');
       header('Location: /');
