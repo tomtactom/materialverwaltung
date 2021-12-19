@@ -27,6 +27,8 @@ $(document).ready(function(){
   //$(this).prev('.edit').show();
   //$(this).prev('.edit').text(field_name);
 
+
+
   // Sending AJAX request
   $.ajax({
    url: 'update.php',
@@ -42,8 +44,7 @@ $(document).ready(function(){
       }
    }
   });
-  $(this).prev('.edit').show();
-  $(this).prev('.edit').text(response);
+    document.getElementById('pack_'+id).innerHTML = response;
 
  });
 
