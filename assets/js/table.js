@@ -12,7 +12,7 @@ $(document).ready(function(){
  $(".txtedit").focusout(function(){
 
   // Get edit id, field name and value
-  //var field_name = this.getAttribute('called');
+  var field_name = this.val();
 
   var table = this.getAttribute('table');
   var entry = this.getAttribute('entry');
@@ -25,7 +25,7 @@ $(document).ready(function(){
 
   // Hide and Change Text of the container with input elmeent
   $(this).prev('.edit').show();
-  //$(this).prev('.edit').text(field_name);
+  $(this).prev('.edit').text(field_name);
 
 
   var response;
@@ -44,7 +44,6 @@ $(document).ready(function(){
       }
    }
   });
-  $(this).prev('.edit').text(response);
 
 
  });
