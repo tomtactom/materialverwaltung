@@ -1,12 +1,12 @@
 // Quelle: https://makitweb.com/make-live-editable-table-with-jquery-ajax/
 $(document).ready(function(){
 
-  // Show Input element
-  $('.edit').click(function(){
-   $('.txtedit').hide();
-   $(this).next('.txtedit').show().focus();
-   $(this).hide();
-  });
+ // Show Input element
+ $('.edit').click(function(){
+  $('.txtedit').hide();
+  $(this).next('.txtedit').show().focus().click();
+  $(this).hide();
+ });
 
  // Save data
  $(".txtedit").focusout(function(){
@@ -35,10 +35,8 @@ $(document).ready(function(){
    success:function(response){
       if(response == 1) {
          console.log('Erfolgreich gespeichert.');
-         console.log(response);
       } else {
          console.log("Nicht gespeichert.");
-         console.log(response);
       }
    }
   });

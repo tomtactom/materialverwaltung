@@ -37,18 +37,17 @@
                 $product_name = $pdo->prepare("SELECT `product_name` FROM `product` WHERE `row_id` = ".$row['product_id']);
         				$pack_name->execute();
         				$product_name->execute();
-                print_r($row);
   					?>
   					<tr>
   						<td>
-                <div style="display:block;" class='edit'> <?php echo $pack_name->fetch()['pack_name']; ?></div>
-                <select name="change_pack" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="pack_id" table="main" rowid="<?php echo $row['row_id']; ?>">
+                <label style="display:block;" class='edit' for="pack_id_<?php echo $row['pack_id']; ?>" > <?php echo $pack_name->fetch()['pack_name']; ?></label>
+                <select name="change_pack" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="pack_id" table="main" rowid="<?php echo $row['pack_id']; ?>">
                   <?php
                     $statement = $pdo->prepare("SELECT * FROM `pack` ORDER BY `row_id`");
                     $result = $statement->execute();
                     while($packs = $statement->fetch()) {
                   ?>
-                  <option value="<?php echo $packs['row_id']; ?>" called="<?php echo $packs['pack_name']; ?>" <?php if ($packs['row_id'] == $row['pack_id']) { echo 'selected'; } ?>><?php echo $packs['pack_name']; ?></option>
+                  <option id="pack_id_<?php echo $row['pack_id']; ?>" value="<?php echo $packs['row_id']; ?>" called="<?php echo $packs['pack_name']; ?>" <?php if ($packs['row_id'] == $row['pack_id']) { echo 'selected'; } ?>><?php echo $packs['pack_name']; ?></option>
                   <?php } ?>
                 </select>
                 <?php echo $pack_name->fetch()['pack_name']; ?>
