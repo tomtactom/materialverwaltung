@@ -23,6 +23,7 @@
               <th>Fach</th>
               <th>Anzahl</th>
               <th>Produkt</th>
+              <th>Ablaufdatum</th>
   					</tr>
   				</thead>
   				<tbody>
@@ -41,6 +42,8 @@
               <td><?php if($row['compartment_name'] == false) { echo 'Allgemein'; } else { echo $row['compartment_name']; } ?></td>
               <td><?php echo $row['number']; ?></td>
               <td><?php print_r($product_name->fetch()['product_name']); ?></td>
+              <td><?php print_r($product_name->fetch()['product_name']); ?></td>
+              <td><?php echo $row['expiry_date']; ?></td>
             </tr>
           <?php } ?>
           </tbody>
