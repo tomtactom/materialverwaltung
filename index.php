@@ -40,7 +40,7 @@
   					?>
   					<tr>
   						<td>
-                <label class='edit' for="pack_id_<?php echo $row['pack_id']; ?>" > <?php echo $pack_name->fetch()['pack_name']; ?></label>
+                <label style="display:block;" class='edit' for="pack_id_<?php echo $row['pack_id']; ?>" > <?php echo $pack_name->fetch()['pack_name']; ?></label>
                 <select name="change_pack" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="pack_id" table="main" rowid="<?php echo $row['pack_id']; ?>">
                   <?php
                     $statement = $pdo->prepare("SELECT * FROM `pack` ORDER BY `row_id`");
