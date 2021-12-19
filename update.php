@@ -25,13 +25,13 @@
     if($_POST['securitycode'] == sha1($config["admin_cookie_hash"]))
 
     if ($_POST['table'] != 'main' and $_POST['table'] != 'pack' and $_POST['table'] != 'product' and $_POST['table'] != 'section') {
-      die(0);
+      die("Fehler 1");
     } else {
       $table = $_POST['table'];
     }
 
     if (!in_array($_POST['entry'], $column_names)) {
-      die(0);
+      die("Fehler 2");
     } else {
       $entry = $_POST['entry'];
     }
@@ -39,7 +39,7 @@
     $value = htmlspecialchars($_POST['value']);
 
     if(!is_numeric($_POST['id'])) {
-      die(0);
+      die("Fehler 3");
     } else {
       $id = $_POST['id'];
     }
@@ -48,10 +48,10 @@
     if ($result == true) {
      echo 1;
    } else {
-     die(0);
+     die("Fehler 4");
    }
   } else {
-     echo 0;
+     echo "Fehler 5";
   }
   exit;
 ?>
