@@ -47,7 +47,7 @@
                     $result = $statement->execute();
                     while($packs = $statement->fetch()) {
                   ?>
-                  <option value="<?php echo $packs['row_id']; ?>" <?php if ($packs['row_id'] == $row['pack_id']) { echo 'selected'; } ?>><?php echo $packs['pack_name']; ?></option>
+                  <option value="ge<?php echo $packs['row_id']; ?>" <?php if ($packs['row_id'] == $row['pack_id']) { echo 'selected'; } ?>><?php echo $packs['pack_name']; ?></option>
                   <?php } ?>
                 </select>
                 <?php echo $pack_name->fetch()['pack_name']; ?>
