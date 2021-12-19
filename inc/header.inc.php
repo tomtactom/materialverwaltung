@@ -32,6 +32,8 @@ $login_status = rand(0,1);
     <!-- optional: Einbinden der Bootstrap-JavaScript-Plugins -->
     <script src="./assets/js/bootstrap.min.js"></script>
 
+    <script src="./assets/js/table.js"></script>
+
   </head>
 
   <body>
