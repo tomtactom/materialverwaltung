@@ -1,3 +1,4 @@
+<?php   require('./inc/config.inc.php'); ?>
 <form method="post">TEMP
   <input name="table" value="main">
   <input name="entry" value="pack_id">
@@ -7,7 +8,6 @@
   <input type="submit">
 </form>
 <?php
-  require('./inc/config.inc.php');
 
   // Write all columns from table in array
   $statement = $pdo->prepare("DESCRIBE `main`");
