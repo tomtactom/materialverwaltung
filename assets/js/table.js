@@ -38,7 +38,7 @@ $(document).ready(function(){
       if(response) {
          console.log('Erfolgreich gespeichert.');
          console.log(response);
-         $(this).prev('.edit').text(response);
+         $(this).prev('.edit').text("Hallo");
       } else {
          console.log("Nicht gespeichert.");
          console.log(response);
