@@ -41,7 +41,7 @@
   					<tr>
   						<td>
                 <div class='edit' > <?php echo $pack_name->fetch()['pack_name']; ?></div>
-                <select name="change_pack">
+                <select name="change_pack" class='txtedit'>
                   <?php
                     $statement = $pdo->prepare("SELECT * FROM `pack` ORDER BY `row_id`");
                     $result = $statement->execute();
