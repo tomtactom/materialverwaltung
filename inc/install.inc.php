@@ -16,25 +16,25 @@
       <form method="post">
         <div class="mb-3">
           <label for="inputPassword" class="form-label">Passwort</label>
-          <input type="text" name="password" class="form-control" id="inputPassword" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" minlength="8" maxlength="32" required aria-describedby="passwordHelp">
+          <input type="password" name="password" class="form-control" id="inputPassword" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" minlength="8" maxlength="32" required aria-describedby="passwordHelp">
           <div id="passwordHelp" class="form-text">Das Passwort muss mindestens eine Zahl, einen Kleinbuchstaben, einen Großbuchstaben und ein Sonderzeichen enthalten und zwischen 8 und 32 Zeichen lang sein.</div>
         </div>
 
         <div class="mb-3">
           <label for="inputPassword2" class="form-label">Passwort wiederholen</label>
-          <input type="text" name="password2" class="form-control" id="inputPassword2" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" minlength="8" maxlength="32" required aria-describedby="password2Help">
+          <input type="password" name="password2" class="form-control" id="inputPassword2" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" minlength="8" maxlength="32" required aria-describedby="password2Help">
           <div id="password2Help" class="form-text">Dies dient dazu, dass man das richtige Passwort eingibt, falls man sich in einem Feld vertippt hat.</div>
         </div>
         <hr>
         <div class="mb-3">
           <label for="inputHost" class="form-label">Datenbank Host</label>
-          <input type="text" name="host" class="form-control" id="inputHost" minlength="4" maxlength="70" required aria-describedby="hostHelp">
+          <input type="text" name="host" class="form-control" id="inputHost" minlength="4" maxlength="70" value="localhost" required aria-describedby="hostHelp">
           <div id="hostHelp" class="form-text">Dieser ist normalerweise <i>localhost</i></div>
         </div>
 
         <div class="mb-3">
           <label for="inputDbname" class="form-label">Datenbank Name</label>
-          <input type="text" name="database" class="form-control" id="inputDbname" maxlength="255" required aria-describedby="dbnameHelp">
+          <input type="text" name="database" class="form-control" id="inputDbname" maxlength="255" value="materialmanagementsystem" required aria-describedby="dbnameHelp">
           <div id="dbnameHelp" class="form-text">Die MySQL-Datenbank muss vom Systemadministrator manuell erstellt werden. Z. B. <i>materialmanagementsystem</i></div>
         </div>
 
