@@ -43,7 +43,6 @@
     die("5");
   }
 */
-echo $_POST['table'];
     if($_POST['securitycode'] != sha1($config["admin_cookie_hash"])) {
       die("Fehler 0");
     }
