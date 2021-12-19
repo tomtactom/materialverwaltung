@@ -40,7 +40,7 @@
   					?>
   					<tr>
   						<td>
-                <div class='edit' > <?php echo $row['pack_name']; ?></div>
+                <div class='edit' > <?php echo $pack_name; ?></div>
                 <select name="change_pack">
                   <?php
                     $statement = $pdo->prepare("SELECT * FROM `pack` ORDER BY `row_id`");
