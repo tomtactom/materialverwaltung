@@ -19,7 +19,7 @@
   $table_section = $statement->fetchAll(PDO::FETCH_COLUMN);
 
   $column_names = array_merge($table_main, $table_pack, $table_product, $table_section);
-
+/*
   if(!isset($_POST['table'])) {
     die("1");
   }
@@ -35,7 +35,8 @@
   if(!isset($_POST['securitycode'])) {
     die("5");
   }
-
+*/
+echo $_POST['table'];
     if($_POST['securitycode'] == sha1($config["admin_cookie_hash"])) {
       die("Fehler 0");
     }
