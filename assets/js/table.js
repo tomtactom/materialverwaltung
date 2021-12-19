@@ -36,14 +36,14 @@ $(document).ready(function(){
       if(response == 1) {
          console.log('Erfolgreich gespeichert.');
          console.log(response);
-         $(this).prev('.edit').show();
-         $(this).prev('.edit').text(response);
       } else {
          console.log("Nicht gespeichert.");
          console.log(response);
       }
    }
   });
+  $(this).prev('.edit').show();
+  $(this).prev('.edit').text(response);
 
  });
 
