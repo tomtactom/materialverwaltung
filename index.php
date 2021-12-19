@@ -50,7 +50,6 @@
                   <option value="<?php echo $packs['row_id']; ?>" <?php if ($packs['row_id'] == $row['pack_id']) { echo 'selected'; } ?>><?php echo $packs['pack_name']; ?></option>
                   <?php } ?>
                 </select>
-                <input type='text' class='txtedit' value='<?php echo $username; ?>' id='username_<?php echo $id; ?>' >
                 <?php print_r($pack_name->fetch()['pack_name']); ?>
               </td>
               <td><?php if($row['compartment_name'] == false) { echo 'Allgemein'; } else { echo $row['compartment_name']; } ?></td>
