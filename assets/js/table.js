@@ -30,7 +30,7 @@ $(document).ready(function(){
   $.ajax({
    url: 'update.php',
    type: 'post',
-   data: { field:field_name, value:value, id:edit_id },
+   data: { field:'', value:value, id:edit_id },
    success:function(response){
       if(response == 1){
          console.log('Erfolgreich gespeichert.');
