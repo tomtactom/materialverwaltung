@@ -25,7 +25,8 @@ $(document).ready(function(){
 
   // Hide and Change Text of the container with input elmeent
   $(this).prev('.edit').show();
-  $(this).prev('.edit').text(value[1]);
+  //$(this).prev('.edit').text(value[1]);
+  document.getElementById('pack_'+id).innerHTML = value[1];
 
 
   var response;
