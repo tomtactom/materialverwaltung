@@ -36,6 +36,7 @@ $(document).ready(function(){
    success:function(response){
       if(response == "1") {
          console.log('Erfolgreich gespeichert.');
+         console.log(response);
       } else {
          console.log("Nicht gespeichert.");
          console.log(response);
