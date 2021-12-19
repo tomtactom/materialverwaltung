@@ -8,8 +8,6 @@
   <input type="submit">
 </form>
 <?php
-
-
   // Write all columns from table in array
   $statement = $pdo->prepare("DESCRIBE `main`");
   $statement->execute();
@@ -46,7 +44,7 @@
   }
 */
 echo $_POST['table'];
-    if($_POST['securitycode'] == sha1($config["admin_cookie_hash"])) {
+    if($_POST['securitycode'] != sha1($config["admin_cookie_hash"])) {
       die("Fehler 0");
     }
 
