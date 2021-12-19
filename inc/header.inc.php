@@ -67,8 +67,9 @@ $login_status = true;
         <?php if ($login_status == true) { ?>
           <button class="btn btn-outline-danger" type="submit">Ausloggen</button>
         <?php } else { ?>
-          <input class="form-control me-2" type="text" placeholder="Benutzername">
-  				<input class="form-control me-2" type="password" placeholder="Passwort">
+          <input class="form-control me-2" type="text" name="username" placeholder="Benutzername" required maxlength="255">
+  				<input class="form-control me-2" type="password" name="password" placeholder="Passwort" required maxlength="255">
+          <input type="hidden" name="securitycode" value="<?php echo $config["unique_securitycode"]; ?>" required>
   				<button class="btn btn-outline-success" type="submit">Einloggen</button>
         <?php } ?>
 			  </form>
