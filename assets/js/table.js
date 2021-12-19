@@ -13,6 +13,7 @@ $(document).ready(function(){
 
   // Get edit id, field name and value
   //var field_name = this.getAttribute('called');
+  $(this).next('.edit').show();
 
   var table = this.getAttribute('table');
   var entry = this.getAttribute('entry');
