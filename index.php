@@ -34,7 +34,7 @@
                   $pack_name->fetch();
   					?>
   					<tr>
-  						<td><?php print_f($pack_name); ?></td>
+  						<td><?php print_r($pack_name); ?></td>
               <td></td>
             </tr>
           <?php } ?>
