@@ -37,6 +37,7 @@
                 $product_name = $pdo->prepare("SELECT `product_name` FROM `product` WHERE `row_id` = ".$row['product_id']);
         				$pack_name->execute();
         				$product_name->execute();
+                print_r($row);
   					?>
   					<tr>
   						<td>
