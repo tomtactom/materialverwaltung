@@ -12,13 +12,13 @@ $(document).ready(function(){
  $(".txtedit").focusout(function(){
 
   // Get edit id, field name and value
-  var id = this.rowid;
   var field_name = this.called;
-  var securitycode = this.securitycode;
-  var entry = this.entry;
-  var table = this.table;
 
+  var table = this.table;
+  var entry = this.entry;
   var value = this.value;
+  var id = this.rowid;
+  var securitycode = this.securitycode;
 
   // Hide Input element
   $(this).hide();
