@@ -41,13 +41,13 @@
   					<tr>
   						<td>
                 <div class='edit' > <?php echo $pack_name->fetch()['pack_name']; ?></div>
-                <select name="change_pack" class='txtedit' value="<?php echo $pack_name->fetch()['pack_name']; ?>">
+                <select name="change_pack" class='txtedit'>
                   <?php
                     $statement = $pdo->prepare("SELECT * FROM `pack` ORDER BY `row_id`");
                     $result = $statement->execute();
                     while($packs = $statement->fetch()) {
                   ?>
-                  <option value="ge<?php echo $packs['row_id']; ?>" <?php if ($packs['row_id'] == $row['pack_id']) { echo 'selected'; } ?>><?php echo $packs['pack_name']; ?></option>
+                  <option value="<?php echo $packs['row_id']; ?>" <?php if ($packs['row_id'] == $row['pack_id']) { echo 'selected'; } ?> called="<?php echo $packs['pack_name']; ?>"><?php echo $packs['pack_name']; ?></option>
                   <?php } ?>
                 </select>
                 <?php echo $pack_name->fetch()['pack_name']; ?>
