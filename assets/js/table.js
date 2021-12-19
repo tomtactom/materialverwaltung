@@ -12,7 +12,7 @@ $(document).ready(function(){
  $(".txtedit").focusout(function(){
 
   // Get edit id, field name and value
-  var field_name = this.getAttribute('called');
+  //var field_name = this.getAttribute('called');
 
   var table = this.getAttribute('table');
   var entry = this.getAttribute('entry');
@@ -24,8 +24,8 @@ $(document).ready(function(){
   $(this).hide();
 
   // Hide and Change Text of the container with input elmeent
-  $(this).prev('.edit').show();
-  $(this).prev('.edit').text(field_name);
+  //$(this).prev('.edit').show();
+  //$(this).prev('.edit').text(field_name);
 
   document.getElementById('pack_'+id).innerHTML = field_name;
 
@@ -35,9 +35,11 @@ $(document).ready(function(){
    type: 'post',
    data: { table:table, entry:entry, value:value, id:id, securitycode:securitycode },
    success:function(response){
-      if(response == "1") {
+      if(response == 1) {
          console.log('Erfolgreich gespeichert.');
          console.log(response);
+         $(this).prev('.edit').show();
+         $(this).prev('.edit').text(response);
       } else {
          console.log("Nicht gespeichert.");
          console.log(response);
