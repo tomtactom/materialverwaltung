@@ -13,7 +13,6 @@ $(document).ready(function(){
 
   // Get edit id, field name and value
   //var field_name = this.getAttribute('called');
-  $(this).next('.edit').show();
 
   var table = this.getAttribute('table');
   var entry = this.getAttribute('entry');
@@ -25,7 +24,7 @@ $(document).ready(function(){
   $(this).hide();
 
   // Hide and Change Text of the container with input elmeent
-  //$(this).prev('.edit').show();
+  $(this).prev('.edit').show();
   //$(this).prev('.edit').text(field_name);
 
 
@@ -45,7 +44,7 @@ $(document).ready(function(){
       }
    }
   });
-    //document.getElementById('pack_'+id).innerHTML = "response";
+    document.getElementById('pack_'+id).innerHTML = "response";
 
  });
 
