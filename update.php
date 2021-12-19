@@ -36,7 +36,6 @@
     die(5);
   }
 
-  if(isset($_POST['table']) && isset($_POST['entry']) && isset($_POST['value']) && isset($_POST['id']) && isset($_POST['securitycode'])) {
     if($_POST['securitycode'] == sha1($config["admin_cookie_hash"])) {
       die("Fehler 0");
     }
@@ -67,8 +66,5 @@
    } else {
      die("Fehler 4");
    }
-  } else {
-     die("Fehler 5");
-  }
   exit;
 ?>
