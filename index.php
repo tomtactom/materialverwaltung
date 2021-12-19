@@ -31,10 +31,10 @@
     						while($row = $statement->fetch()) {
                   $pack_name = $pdo->prepare("SELECT `pack_name` FROM `pack` WHERE `pack_id` = ".$row['pack_id']);
         					$pack_name->execute();
-                  $pack_name->fetch()[0];
+                  $pack_name->fetch();
   					?>
   					<tr>
-  						<td><?php echo $pack_name; ?></td>
+  						<td><?php print_f($pack_name); ?></td>
               <td></td>
             </tr>
           <?php } ?>
