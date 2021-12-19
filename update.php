@@ -1,3 +1,11 @@
+<form method="post">TEMP
+  <input name="table" value="main">
+  <input name="entry" value="pack_id">
+  <input name="value" value="1">
+  <input name="id" value="1">
+  <input name="securitycode" value="9afbeec43e32c3b24abcc1eb5940df354f45706d">
+  <input type="submit">
+</form>
 <?php
   require('./inc/config.inc.php');
 
@@ -69,11 +77,3 @@ echo $_POST['table'];
    }
   exit;
 ?>
-<form method="post">TEMP
-  <input name="table" value="main">
-  <input name="entry" value="pack_id">
-  <input name="value" value="1">
-  <input name="id" value="1">
-  <input name="securitycode" value="9afbeec43e32c3b24abcc1eb5940df354f45706d">
-  <input type="submit">
-</form>
