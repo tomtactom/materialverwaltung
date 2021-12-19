@@ -4,7 +4,7 @@
   $statement = $pdo->prepare("DESCRIBE `main`");
   $statement->execute();
   $table_fields = $statement->fetchAll(PDO::FETCH_COLUMN);
-  print_r($table_fields);
+  print_r($table_fields[0]);
   die();
 
 
