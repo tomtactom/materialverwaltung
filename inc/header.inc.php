@@ -11,6 +11,11 @@
 
 <?php require('./inc/config.inc.php');
 //$pdo = new PDO("mysql:host=".$options['db_host'].";dbname=".$options['db_name'], $options['db_user'], $options['db_password']);
+/* TEMP */
+$login_status = true;
+
+
+
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="de-DE">
