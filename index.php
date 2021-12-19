@@ -48,7 +48,6 @@
                     while($packs = $statement->fetch()) {
                   ?>
                   <option
-                    class='txtedit'
                     value="<?php echo $packs['row_id']; ?>"
                     <?php if ($packs['row_id'] == $row['pack_id']) { echo 'selected'; } ?>
                     called="<?php echo $packs['pack_name']; ?>"
