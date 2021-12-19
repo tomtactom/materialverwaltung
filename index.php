@@ -24,7 +24,7 @@
               <th>Anzahl</th>
               <th>Produkt</th>
               <th>Ablaufdatum</th>
-              <th>Ändern</th>
+              <th>Löschen</th>
   					</tr>
   				</thead>
   				<tbody>
@@ -39,7 +39,20 @@
         				$product_name->execute();
   					?>
   					<tr>
-  						<td><div contentEditable="true" class="edit" id="pack_name_<?php echo $row['pack_id']; ?>"><?php print_r($pack_name->fetch()['pack_name']); ?></div></td>
+  						<td>
+                <div class='edit' > <?php echo $row['pack_name']; ?></div>
+                <select name="change_pack">
+                  <?php
+                    $statement = $pdo->prepare("SELECT * FROM `pack` ORDER BY `row_id`");
+                    $result = $statement->execute();
+                    while($packs = $statement->fetch()) {
+                  ?>
+                  <option value="<?php echo $packs['row_id']; ?>" <?php if ($packs['row_id'] == $row['pack_id']) { echo 'selected'; } ?>><?php echo $packs['pack_name']; ?></option>
+                  <?php } ?>
+                </select>
+                <input type='text' class='txtedit' value='<?php echo $username; ?>' id='username_<?php echo $id; ?>' >
+                <?php print_r($pack_name->fetch()['pack_name']); ?>
+              </td>
               <td><?php if($row['compartment_name'] == false) { echo 'Allgemein'; } else { echo $row['compartment_name']; } ?></td>
               <td><?php echo $row['number']; ?></td>
               <td><?php print_r($product_name->fetch()['product_name']); ?></td>
