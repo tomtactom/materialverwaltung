@@ -14,11 +14,9 @@ $(document).ready(function(){
   // Get edit id, field name and value
   var id = this.id;
   var split_id = id.split("_");
-  //var field_name = split_id[0];
+  var field_name = this.called;
 
-  var field_name = this.called
-
-  var edit_id = split_id[1];
+  var edit_id = this.value;
   var value = $(this).val();
 
   // Hide Input element
@@ -26,7 +24,7 @@ $(document).ready(function(){
 
   // Hide and Change Text of the container with input elmeent
   $(this).prev('.edit').show();
-  $(this).prev('.edit').text(value);
+  $(this).prev('.edit').text(field_name);
 
   // Sending AJAX request
   $.ajax({
