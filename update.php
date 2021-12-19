@@ -21,7 +21,7 @@
   $column_names = array_merge($table_main, $table_pack, $table_product, $table_section);
 
 
-  if(isset($_POST['table']) && isset($_POST['entry']) && isset($_POST['value']) && isset($_POST['id'])) {
+  if(isset($_POST['table']) && isset($_POST['entry']) && isset($_POST['value']) && isset($_POST['id']) && isset($_POST['securitycode'])) {
     if ($_POST['table'] != 'main' and $_POST['table'] != 'pack' and $_POST['table'] != 'product' and $_POST['table'] != 'section') {
       die(0);
     } else {
@@ -34,13 +34,20 @@
       $entry = $_POST['entry'];
     }
 
-    /*
-    $entry
-    $value
-    $id*/
-    //$statement = $pdo->prepare("UPDATE `main` SET `pack_id` = ".$pack_id." WHERE `row_id` = ".$editid);
+    $value = htmlspecialchars($_POST['value']);
 
+    if(!is_numeric($_POST['id'])) {
+      die(0);
+    } else {
+      $id = $_POST['id'];
+    }
+    $statement = $pdo->prepare("UPDATE `".$table."` SET `".$entry."` = ".$value." WHERE `row_id` = ".$id);
+    $result = $statement->execute();
+    if ($result == true) {
      echo 1;
+   } else {
+     die(0);
+   }
   } else {
      echo 0;
   }
