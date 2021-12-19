@@ -36,12 +36,12 @@ if (isset($_POST['install'])) {
   $config["mysqlhost"] = "'.$host.'";
   $config["mysqldatabase"] = "'.$database.'";
   $config["mysqlusername"] = "'.$mysqlusername.'";
-  $config["mysqluserpassword"] = "'.$mysqluserpassword.'";
+  $config["mysqluserpassword"] = "'.base64_encode($mysqluserpassword).'";
   $config["salt1"] = "'.$salt1.'";
   $config["salt2"] = "'.$salt2.'";
   $config["password"] = "'.hash('sha256', $salt1.$password.$salt2).'";
   $config["admin_cookie_hash"] = "'.generateRandomString(32).'";
-  $pdo = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_password);');
+  $pdo = new PDO("mysql:host=$config[\'mysqlhost\'];dbname=$config[\'mysqldatabase\']", $config[\'mysqlusername\'], base64_decode($config[\'mysqluserpassword\']));');
   #unlink('./inc/install.backend.inc.php');
   #unlink('./inc/install.inc.php');
       header('Location: /');
