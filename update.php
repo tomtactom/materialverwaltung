@@ -20,19 +20,19 @@
 
   $column_names = array_merge($table_main, $table_pack, $table_product, $table_section);
 
-  if(isset($_POST['table'])) {
+  if(!isset($_POST['table'])) {
     die(1);
   }
-  if(isset($_POST['entry'])) {
+  if(!isset($_POST['entry'])) {
     die(2);
   }
-  if(isset($_POST['value'])) {
+  if(!isset($_POST['value'])) {
     die(3);
   }
-  if(isset($_POST['id'])) {
+  if(!isset($_POST['id'])) {
     die(4);
   }
-  if(isset($_POST['securitycode'])) {
+  if(!isset($_POST['securitycode'])) {
     die(5);
   }
 
