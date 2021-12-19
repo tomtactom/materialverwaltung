@@ -38,7 +38,7 @@ $(document).ready(function(){
       if(response) {
          console.log('Erfolgreich gespeichert.');
          console.log(response);
-         document.getElementById('pack_'+id).innerHTML = response;
+         $(this).prev('.edit').text(response);
       } else {
          console.log("Nicht gespeichert.");
          console.log(response);
