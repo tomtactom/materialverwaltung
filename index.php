@@ -33,7 +33,7 @@
         					$pack_name->execute();
   					?>
   					<tr>
-  						<td><?php print_r($pack_name->fetch()); ?></td>
+  						<td><?php print_r($pack_name->fetch()['pack_name']); ?></td>
               <td></td>
             </tr>
           <?php } ?>
