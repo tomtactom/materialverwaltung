@@ -28,7 +28,7 @@ $(document).ready(function(){
   //$(this).prev('.edit').text(field_name);
 
 
-
+  var response;
   // Sending AJAX request
   $.ajax({
    url: 'update.php',
@@ -44,7 +44,7 @@ $(document).ready(function(){
       }
    }
   });
-  $(this).prev('.edit').text("Hallo");
+  $(this).prev('.edit').text(response);
 
 
  });
