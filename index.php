@@ -31,7 +31,6 @@
     						while($row = $statement->fetch()) {
                 $pack_name = $pdo->prepare("SELECT `pack_name` FROM `pack` WHERE `row_id` = 1"/*.$row['pack_id']*/);
         					$pack_name->execute();
-                  ;
   					?>
   					<tr>
   						<td><?php $pack_name->fetch()[0]; ?></td>
