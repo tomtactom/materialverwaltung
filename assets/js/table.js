@@ -45,7 +45,7 @@ $(document).ready(function(){
       }
    }
   });
-    document.getElementById('pack_'+id).innerHTML = "response";
+    //document.getElementById('pack_'+id).innerHTML = "response";
 
  });
 
