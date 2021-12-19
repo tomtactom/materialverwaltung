@@ -51,8 +51,10 @@
                     value="<?php echo $packs['row_id']; ?>"
                     <?php if ($packs['row_id'] == $row['pack_id']) { echo 'selected'; } ?>
                     called="<?php echo $packs['pack_name']; ?>"
-                    securitycode="<?php echo $config['admin_cookie_hash']; ?>
-                  ">
+                    securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>"
+                    entry="pack_id"
+                    table="main"
+                  >
                     <?php echo $packs['pack_name']; ?>
                   </option>
                   <?php } ?>
