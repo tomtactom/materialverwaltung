@@ -4,7 +4,8 @@ $(document).ready(function(){
  // Show Input element
  $('.edit').click(function(){
   $('.txtedit').hide();
-  $(this).next('.txtedit').show().click()
+  $(this).next('.txtedit').show().focus();
+  $('.txtedit').click();
   $(this).hide();
  });
 
