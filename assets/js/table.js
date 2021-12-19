@@ -13,7 +13,6 @@ $(document).ready(function(){
 
   // Get edit id, field name and value
   var id = this.rowid;
-  var split_id = id.split("_");
   var field_name = this.called;
   var securitycode = this.securitycode;
   var entry = this.entry;
