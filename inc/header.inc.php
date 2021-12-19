@@ -12,7 +12,7 @@
 <?php require('./inc/config.inc.php');
 //$pdo = new PDO("mysql:host=".$options['db_host'].";dbname=".$options['db_name'], $options['db_user'], $options['db_password']);
 /* TEMP */
-$login_status = true;
+$login_status = rand(0,1);
 
 ?>
 <!DOCTYPE html>
@@ -67,7 +67,7 @@ $login_status = true;
         <?php if ($login_status == true) { ?>
           <button class="btn btn-outline-danger" type="submit">Ausloggen</button>
         <?php } else { ?>
-          <input class="form-control me-2" type="text" name="username" placeholder="Benutzername" required maxlength="255">
+          <!--<input class="form-control me-2" type="text" name="username" placeholder="Benutzername" required maxlength="255">-->
   				<input class="form-control me-2" type="password" name="password" placeholder="Passwort" required maxlength="255">
           <input type="hidden" name="securitycode" value="<?php echo $config["unique_securitycode"]; ?>" required>
   				<button class="btn btn-outline-success" type="submit">Einloggen</button>
