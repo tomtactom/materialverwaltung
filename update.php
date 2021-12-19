@@ -68,7 +68,7 @@
      die("Fehler 4");
    }
   } else {
-     echo "Fehler 5";
+     die("Fehler 5");
   }
   exit;
 ?>
