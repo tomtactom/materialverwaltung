@@ -35,7 +35,7 @@ $(document).ready(function(){
    type: 'post',
    data: { table:table, entry:entry, value:value, id:id, securitycode:securitycode },
    success:function(response){
-      if(response == 1) {
+      if(response == true) {
          console.log('Erfolgreich gespeichert.');
          console.log(response);
       } else {
