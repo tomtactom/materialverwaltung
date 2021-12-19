@@ -37,6 +37,7 @@
   						<td><?php echo $pack_name; ?></td>
               <td></td>
             </tr>
+          <?php } ?>
           </tbody>
         </table>
       </div>
