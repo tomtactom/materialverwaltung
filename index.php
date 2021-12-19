@@ -42,7 +42,7 @@
   					<tr>
   						<td>
                 <div style="display:block;" class='edit'> <?php echo $pack_name->fetch()['pack_name']; ?></div>
-                <select name="change_pack" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="pack_id" table="main" rowid="<?php echo $row['pack_id']; ?>">
+                <select name="change_pack" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="pack_id" table="main" rowid="<?php echo $row['row_id']; ?>">
                   <?php
                     $statement = $pdo->prepare("SELECT * FROM `pack` ORDER BY `row_id`");
                     $result = $statement->execute();
