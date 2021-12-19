@@ -7,7 +7,7 @@ $(document).ready(function(){
   $(this).next('.txtedit').show().focus();
   $(this).hide();
  });
-//test
+
  // Save data
  $(".txtedit").focusout(function(){
 
@@ -33,9 +33,9 @@ $(document).ready(function(){
    type: 'post',
    data: { table:table, entry:entry, value:value, id:id, securitycode:securitycode },
    success:function(response){
-      if(response == 1) {
+      if(response == "1"){
          console.log('Erfolgreich gespeichert.');
-      } else {
+      }else{
          console.log("Nicht gespeichert.");
       }
    }
