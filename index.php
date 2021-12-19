@@ -47,7 +47,14 @@
                     $result = $statement->execute();
                     while($packs = $statement->fetch()) {
                   ?>
-                  <option value="<?php echo $packs['row_id']; ?>" <?php if ($packs['row_id'] == $row['pack_id']) { echo 'selected'; } ?> called="<?php echo $packs['pack_name']; ?>"><?php echo $packs['pack_name']; ?></option>
+                  <option
+                    value="<?php echo $packs['row_id']; ?>"
+                    <?php if ($packs['row_id'] == $row['pack_id']) { echo 'selected'; } ?>
+                    called="<?php echo $packs['pack_name']; ?>"
+                    securitycode="<?php echo $config['admin_cookie_hash']; ?>
+                  ">
+                    <?php echo $packs['pack_name']; ?>
+                  </option>
                   <?php } ?>
                 </select>
                 <?php echo $pack_name->fetch()['pack_name']; ?>

@@ -22,6 +22,8 @@
 
 
   if(isset($_POST['table']) && isset($_POST['entry']) && isset($_POST['value']) && isset($_POST['id']) && isset($_POST['securitycode'])) {
+    if($_POST['securitycode'] == sha1($config["admin_cookie_hash"]))
+
     if ($_POST['table'] != 'main' and $_POST['table'] != 'pack' and $_POST['table'] != 'product' and $_POST['table'] != 'section') {
       die(0);
     } else {

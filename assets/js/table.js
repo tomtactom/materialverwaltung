@@ -12,11 +12,11 @@ $(document).ready(function(){
  $(".txtedit").focusout(function(){
 
   // Get edit id, field name and value
-  var id = this.id;
+  var id = this.value;
   var split_id = id.split("_");
   var field_name = this.called;
+  var securitycode = this.securitycode
 
-  var edit_id = this.value;
   var value = $(this).val();
 
   // Hide Input element
@@ -30,7 +30,7 @@ $(document).ready(function(){
   $.ajax({
    url: 'update.php',
    type: 'post',
-   data: { field:'', value:value, id:edit_id },
+   data: { table:'', entry:'', id:id, securitycode:securitycode },
    success:function(response){
       if(response == 1){
          console.log('Erfolgreich gespeichert.');
