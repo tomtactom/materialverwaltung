@@ -12,11 +12,11 @@ $(document).ready(function(){
  $(".txtedit").focusout(function(){
 
   // Get edit id, field name and value
-  var field_name = $(this).attr('called');
+  //var field_name = $(this).attr('called');
 
   var table = this.getAttribute('table');
   var entry = this.getAttribute('entry');
-  var value = this.value;
+  var value = this.value.split("_", 1);
   var id = this.getAttribute('rowid');
   var securitycode = this.getAttribute('securitycode');
 
@@ -25,7 +25,7 @@ $(document).ready(function(){
 
   // Hide and Change Text of the container with input elmeent
   $(this).prev('.edit').show();
-  $(this).prev('.edit').text(field_name);
+  $(this).prev('.edit').text(value[2]);
 
 
   var response;
@@ -33,7 +33,7 @@ $(document).ready(function(){
   $.ajax({
    url: 'update.php',
    type: 'post',
-   data: { table:table, entry:entry, value:value, id:id, securitycode:securitycode },
+   data: { table:table, entry:entry, value:value[0], id:id, securitycode:securitycode },
    success:function(response){
       if(response) {
          console.log('Erfolgreich gespeichert.');
