@@ -12,14 +12,14 @@ $(document).ready(function(){
  $(".txtedit").focusout(function(){
 
   // Get edit id, field name and value
-  var id = this.value;
+  var id = this.rowid;
   var split_id = id.split("_");
   var field_name = this.called;
   var securitycode = this.securitycode
   var entry = this.entry
   var table = this.table
 
-  var value = $(this).val();
+  var value = this.value;
 
   // Hide Input element
   $(this).hide();
@@ -32,7 +32,7 @@ $(document).ready(function(){
   $.ajax({
    url: 'update.php',
    type: 'post',
-   data: { table:table, entry:entry, id:id, securitycode:securitycode },
+   data: { table:table, entry:entry, entry:value, id:id, securitycode:securitycode },
    success:function(response){
       if(response == "1"){
          console.log('Erfolgreich gespeichert.');

@@ -54,6 +54,7 @@
                     securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>"
                     entry="pack_id"
                     table="main"
+                    rowid="<?php echo $row['pack_id']; ?>"
                   >
                     <?php echo $packs['pack_name']; ?>
                   </option>
