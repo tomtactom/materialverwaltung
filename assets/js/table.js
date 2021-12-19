@@ -16,7 +16,7 @@ $(document).ready(function(){
 
   var table = this.getAttribute('table');
   var entry = this.getAttribute('entry');
-  var value = this.value.split("_", 1);
+  var value = this.value.split("_", 2);
   var id = this.getAttribute('rowid');
   var securitycode = this.getAttribute('securitycode');
 
