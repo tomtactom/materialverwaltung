@@ -14,7 +14,10 @@ $(document).ready(function(){
   // Get edit id, field name and value
   var id = this.id;
   var split_id = id.split("_");
-  var field_name = split_id[0];
+  //var field_name = split_id[0];
+
+  var field_name = this.value
+
   var edit_id = split_id[1];
   var value = $(this).val();
 
