@@ -37,8 +37,11 @@ $(document).ready(function(){
          console.log('Erfolgreich gespeichert.');
       }else{
          console.log("Nicht gespeichert.");
-         console.log(response);
+         console.log(table);
+         console.log(entry);
          console.log(value);
+         console.log(id);
+         console.log(securitycode);
       }
    }
   });
