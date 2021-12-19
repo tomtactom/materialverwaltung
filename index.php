@@ -42,7 +42,6 @@
               <td><?php if($row['compartment_name'] == false) { echo 'Allgemein'; } else { echo $row['compartment_name']; } ?></td>
               <td><?php echo $row['number']; ?></td>
               <td><?php print_r($product_name->fetch()['product_name']); ?></td>
-              <td><?php print_r($product_name->fetch()['product_name']); ?></td>
               <td><?php echo $row['expiry_date']; ?></td>
             </tr>
           <?php } ?>
