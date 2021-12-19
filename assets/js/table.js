@@ -27,6 +27,8 @@ $(document).ready(function(){
   $(this).prev('.edit').show();
   //$(this).prev('.edit').text(value[1]);
   document.getElementById('pack_'+id).innerHTML = value[1];
+  console.log(value[0]);
+  console.log(value[1]);
 
 
   var response;
