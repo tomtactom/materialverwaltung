@@ -40,7 +40,7 @@
   					?>
   					<tr>
   						<td>
-                <div class='edit' > <?php echo $pack_name; ?></div>
+                <div class='edit' > <?php echo $pack_name->fetch()['pack_name']; ?></div>
                 <select name="change_pack">
                   <?php
                     $statement = $pdo->prepare("SELECT * FROM `pack` ORDER BY `row_id`");
@@ -55,7 +55,7 @@
               </td>
               <td><?php if($row['compartment_name'] == false) { echo 'Allgemein'; } else { echo $row['compartment_name']; } ?></td>
               <td><?php echo $row['number']; ?></td>
-              <td><?php print_r($product_name->fetch()['product_name']); ?></td>
+              <td><?php echo $product_name->fetch()['product_name']; ?></td>
               <td><?php echo $row['expiry_date']; ?></td>
             </tr>
           <?php } ?>
