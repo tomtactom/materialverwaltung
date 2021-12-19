@@ -27,7 +27,7 @@ $(document).ready(function(){
   $(this).prev('.edit').show();
   $(this).prev('.edit').text(field_name);
 
-  $('.edit').innerHTML = field_name;
+  document.getElementById('pack_'+id).innerHTML = field_name;
 
   // Sending AJAX request
   $.ajax({
