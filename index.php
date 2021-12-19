@@ -21,6 +21,7 @@
   					<tr>
   						<th>Rucksack/Box</th>
               <th>Fach</th>
+              <th>Anzahl</th>
   					</tr>
   				</thead>
   				<tbody>
@@ -35,6 +36,7 @@
   					<tr>
   						<td><?php print_r($pack_name->fetch()['pack_name']); ?></td>
               <td><?php if($row['compartment_name'] == false) { echo 'Allgemein'; } else { echo $row['compartment_name']; } ?></td>
+              <td><?php echo $row['number']; ?></td>
             </tr>
           <?php } ?>
           </tbody>
