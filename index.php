@@ -15,26 +15,29 @@
       <h2>Ergebnisse</h2>
 
       <!-- Tabelle mit abwechselnder Zellenhintergrundfarbe und Außenrahmen -->
-      <table class="table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Title</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Lorem ipsum dolor sit amet</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Consetetur sadipscing elitr</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>At vero eos et accusam</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-scrollable">
+        <table class="table table-striped table-bordered">
+          <thead>
+  					<tr>
+  						<th>Box</th>
+              <th></th>
+  					</tr>
+  				</thead>
+  				<tbody>
+            <?php
+    					$statement = $pdo->prepare("SELECT * FROM `main` ORDER BY `row_id`");
+    					$result = $statement->execute();
+    					$count = 1;
+    						while($row = $statement->fetch()) {
+                  $pack_name = $pdo->prepare("SELECT * FROM `main` WHERE `pack_id` = ".$row['pack_id']);
+        					$pack_name->execute();
+                  $pack_name->fetch();
+  					?>
+  					<tr>
+  						<td><?php echo $pack_name; ?></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 <?php require('./inc/footer.inc.php'); ?>
