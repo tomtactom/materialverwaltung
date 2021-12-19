@@ -27,12 +27,11 @@ if (isset($_POST['install'])) {
   } else {
     $salt1 = generateRandomString();
     $salt2 = generateRandomString();
-      echo $connection->connect_error;
-      $query = file_get_contents('./inc/import.sql');
-      mysqli_query($connection,$query); #or die('Problem beim Ausführen der SQL-Abfrage.');
-      $msg = "Die grundlegenden Einstellungen konnten alle vorgenommen werden.";
-      // Informationen in ./inc/config.inc.php schreiben
-      file_put_contents('./inc/config.inc.php', '<?php
+    $pdo = new PDO("mysql:host=".$host.";dbname=".$database, $mysqlusername, $mysqluserpassword);
+    $pdo->exec(file_get_contents('./inc/import.sql'));
+    $msg = "Die grundlegenden Einstellungen konnten alle vorgenommen werden.";
+    // Informationen in ./inc/config.inc.php schreiben
+    file_put_contents('./inc/config.inc.php', '<?php
   $config["mysqlhost"] = "'.$host.'";
   $config["mysqldatabase"] = "'.$database.'";
   $config["mysqlusername"] = "'.$mysqlusername.'";
