@@ -2,7 +2,7 @@
   $options['sitetitle'] = 'Materialverwaltung';
   require('./inc/header.inc.php');
 ?>
-      <h1>Suche</h1>
+      <h1>Suche1</h1>
 
       <p>Beispiel für ein einfaches Suchformular.</p>
 
