@@ -1,6 +1,7 @@
 <?php
   require('./inc/config.inc.php');
 
+  // Write all columns from table in array
   $statement = $pdo->prepare("DESCRIBE `main`");
   $statement->execute();
   $table_main = $statement->fetchAll(PDO::FETCH_COLUMN);
@@ -26,7 +27,12 @@
     } else {
       $table = $_POST['table'];
     }
-    if (!in_array($_POST['entry'], $column_names))
+
+    if (!in_array($_POST['entry'], $column_names)) {
+      die(0);
+    } else {
+      $entry = $_POST['entry'];
+    }
 
     /*
     $entry
