@@ -22,6 +22,7 @@
   						<th>Rucksack/Box</th>
               <th>Fach</th>
               <th>Anzahl</th>
+              <th>Produkt</th>
   					</tr>
   				</thead>
   				<tbody>
@@ -31,12 +32,15 @@
     					$count = 1;
     						while($row = $statement->fetch()) {
                 $pack_name = $pdo->prepare("SELECT `pack_name` FROM `pack` WHERE `row_id` = ".$row['pack_id']);
+                $product_name = $pdo->prepare("SELECT `product_name` FROM `product` WHERE `row_id` = ".$row['pack_id']);
         				$pack_name->execute();
+        				$product_name->execute();
   					?>
   					<tr>
   						<td><?php print_r($pack_name->fetch()['pack_name']); ?></td>
               <td><?php if($row['compartment_name'] == false) { echo 'Allgemein'; } else { echo $row['compartment_name']; } ?></td>
               <td><?php echo $row['number']; ?></td>
+              <td><?php print_r($product_name->fetch()['product_name']); ?></td>
             </tr>
           <?php } ?>
           </tbody>
