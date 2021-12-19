@@ -14,8 +14,6 @@
 /* TEMP */
 $login_status = true;
 
-
-
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="de-DE">
