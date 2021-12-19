@@ -41,7 +41,7 @@
   					<tr>
   						<td>
                 <div class='edit' > <?php echo $pack_name->fetch()['pack_name']; ?></div>
-                <select name="change_pack" class='txtedit'>
+                <select name="change_pack" class='txtedit' value="<?php echo $pack_name->fetch()['pack_name']; ?>">
                   <?php
                     $statement = $pdo->prepare("SELECT * FROM `pack` ORDER BY `row_id`");
                     $result = $statement->execute();
@@ -50,7 +50,7 @@
                   <option value="<?php echo $packs['row_id']; ?>" <?php if ($packs['row_id'] == $row['pack_id']) { echo 'selected'; } ?>><?php echo $packs['pack_name']; ?></option>
                   <?php } ?>
                 </select>
-                <?php print_r($pack_name->fetch()['pack_name']); ?>
+                <?php echo $pack_name->fetch()['pack_name']; ?>
               </td>
               <td><?php if($row['compartment_name'] == false) { echo 'Allgemein'; } else { echo $row['compartment_name']; } ?></td>
               <td><?php echo $row['number']; ?></td>
