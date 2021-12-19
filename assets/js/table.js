@@ -27,7 +27,7 @@ $(document).ready(function(){
   $(this).prev('.edit').show();
   //$(this).prev('.edit').text(value[1]);
   document.getElementById('pack_'+id).innerHTML = value[1];
-  document.querySelectorAll("value='"value[0]+"_"+value[1]').setAttribute("selected", "1");
+  //document.querySelectorAll("value='"value[0]+"_"+value[1]').setAttribute("selected", "1");
   console.log(value);
 
 
