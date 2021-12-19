@@ -29,9 +29,9 @@
     					$result = $statement->execute();
     					$count = 1;
     						while($row = $statement->fetch()) {
-                  $pack_name = $pdo->prepare("SELECT * FROM `main` WHERE `pack_id` = ".$row['pack_id']);
+                  $pack_name = $pdo->prepare("SELECT `pack_name` FROM `pack` WHERE `pack_id` = ".$row['pack_id']);
         					$pack_name->execute();
-                  $pack_name->fetch();
+                  $pack_name->fetch()[0];
   					?>
   					<tr>
   						<td><?php echo $pack_name; ?></td>
