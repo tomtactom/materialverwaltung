@@ -2,7 +2,7 @@
   $options['sitetitle'] = 'Materialverwaltung';
   require('./inc/header.inc.php');
 ?>
-      <h1>Suche1</h1>
+      <h1>Suche</h1>
 
       <p>Beispiel für ein einfaches Suchformular.</p>
 
@@ -37,11 +37,12 @@
                 $product_name = $pdo->prepare("SELECT `product_name` FROM `product` WHERE `row_id` = ".$row['product_id']);
         				$pack_name->execute();
         				$product_name->execute();
+                print_r($row);
   					?>
   					<tr>
   						<td>
-                <div class='edit' > <?php echo $pack_name->fetch()['pack_name']; ?></div>
-                <select name="change_pack" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="pack_id" table="main" rowid="<?php echo $row['pack_id']; ?>">
+                <div style="display:block;" class='edit'> <?php echo $pack_name->fetch()['pack_name']; ?></div>
+                <select name="change_pack" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="pack_id" table="main" rowid="<?php echo $row['row_id']; ?>">
                   <?php
                     $statement = $pdo->prepare("SELECT * FROM `pack` ORDER BY `row_id`");
                     $result = $statement->execute();
