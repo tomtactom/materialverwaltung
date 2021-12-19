@@ -29,7 +29,7 @@
   if(isset($_POST['value'])) {
     die(3);
   }
-  if(isset(isset($_POST['id'])) {
+  if(isset($_POST['id'])) {
     die(4);
   }
   if(isset($_POST['securitycode'])) {
