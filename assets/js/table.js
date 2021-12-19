@@ -33,15 +33,10 @@ $(document).ready(function(){
    type: 'post',
    data: { table:table, entry:entry, value:value, id:id, securitycode:securitycode },
    success:function(response){
-      if(response == "1"){
+      if(response == 1) {
          console.log('Erfolgreich gespeichert.');
-      }else{
+      } else {
          console.log("Nicht gespeichert.");
-         console.log(table);
-         console.log(entry);
-         console.log(value);
-         console.log(id);
-         console.log(securitycode);
       }
    }
   });
