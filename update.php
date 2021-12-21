@@ -1,13 +1,13 @@
-<?php   require('./inc/config.inc.php'); ?>
-<form method="post">TEMP
+<?php   require('./inc/config.inc.php');
+/*
+<form method="post">Test
   <input name="table" value="main">
   <input name="entry" value="pack_id">
   <input name="value" value="1">
   <input name="id" value="1">
   <input name="securitycode" value="<?php echo sha1($config["admin_cookie_hash"]); ?>">
   <input type="submit">
-</form>
-<?php
+</form>*/ 
 
   // Write all columns from table in array
   $statement = $pdo->prepare("DESCRIBE `main`");
@@ -59,7 +59,6 @@
   $result = $statement->execute();
   if ($result == true) {
    echo 1;
-   echo "UPDATE `".$table."` SET `".$entry."` = ".$value." WHERE `row_id` = ".$id;
  } else {
    die("Die Daten konnten nicht gespeichert werden.");
  }
