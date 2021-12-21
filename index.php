@@ -31,19 +31,15 @@
             <?php
     					$main_statement = $pdo->prepare("SELECT * FROM `main` ORDER BY `row_id`");
     					$main_result = $main_statement->execute();
-    					$count = 1;
     					while($row = $main_statement->fetch()) {
-                //
-                $pack_name = $pdo->prepare("SELECT `pack_name` FROM `pack` WHERE `row_id` = ".$row['pack_id']);
-                $pack_name->execute();
-
-                //
-                $product_name = $pdo->prepare("SELECT `product_name` FROM `product` WHERE `row_id` = ".$row['product_id']);
-        				$product_name->execute();
   					?>
   					<tr>
               <!-- Rucksack/Box - <select> -->
   						<td>
+                <?php
+                  $pack_name = $pdo->prepare("SELECT `pack_name` FROM `pack` WHERE `row_id` = ".$row['pack_id']);
+                  $pack_name->execute();
+                ?>
                 <div class='edit' id="pack_<?php echo $row['row_id']; ?>"><?php echo $pack_name->fetch()['pack_name']; ?></div>
                 <select name="change_pack" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="pack_id" table="main" rowid="<?php echo $row['row_id']; ?>">
                   <?php
@@ -54,13 +50,19 @@
                   <option value="<?php echo $pack_row['row_id']; ?>_<?php echo $pack_row['pack_name']; ?>" called="<?php echo $pack_row['pack_name']; ?>" <?php if ($pack_row['row_id'] == $row['pack_id']) { echo 'selected'; } ?>><?php echo $pack_row['pack_name']; ?></option>
                   <?php } ?>
                 </select>
-                <?php //echo $pack_name->fetch()['pack_name']; ?>
               </td>
 
               <!-- Fach <select> -->
               <td></td>
               <td><?php echo $row['number']; ?></td>
-              <td><?php echo $product_name->fetch()['product_name']; ?></td>
+              <!-- Produkt -->
+              <td>
+                <?php
+                  $product_name = $pdo->prepare("SELECT `product_name` FROM `product` WHERE `row_id` = ".$row['product_id']);
+                  $product_name->execute();
+                ?>
+                <?php echo $product_name->fetch()['product_name']; ?>
+              </td>
               <td><?php echo $row['expiry_date']; ?></td>
             </tr>
           <?php } ?>
