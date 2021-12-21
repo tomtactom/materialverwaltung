@@ -73,7 +73,7 @@
               <!-- Anzahl <input type="number"> (NOT 0 DEFAULT 1) -->
               <td>
                 <div class="edit"><?php echo $row['number']; ?></div>
-                <input type="number" name="change_number" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="number" table="main" value="<?php echo $row['number']; ?>" rowid="<?php echo $row['row_id']; ?>" min="1" required>
+                <input type="number" name="change_number" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="number" table="main" value="<?php echo $row['number']; ?>" rowid="<?php echo $row['row_id']; ?>">
               </td>
 
               <!-- Produkt <select> -->
@@ -94,7 +94,11 @@
                 </select>
               </td>
 
-              <td><?php echo $row['expiry_date']; ?></td>
+              <!-- Anzahl <input type="date">  -->
+              <td>
+                <div class="edit"><?php echo $row['expiry_date']; ?></div>
+                <input type="date" name="change_expiry_date" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="expiry_date" table="main" value="<?php echo $row['expiry_date']; ?>" rowid="<?php echo $row['row_id']; ?>">
+              </td>
             </tr>
           <?php } ?>
           </tbody>
