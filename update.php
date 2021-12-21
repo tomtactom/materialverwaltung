@@ -18,6 +18,10 @@
   $statement->execute();
   $table_pack = $statement->fetchAll(PDO::FETCH_COLUMN);
 
+  $statement = $pdo->prepare("DESCRIBE `compartment`");
+  $statement->execute();
+  $table_compartment = $statement->fetchAll(PDO::FETCH_COLUMN);
+
   $statement = $pdo->prepare("DESCRIBE `product`");
   $statement->execute();
   $table_product = $statement->fetchAll(PDO::FETCH_COLUMN);
@@ -26,7 +30,7 @@
   $statement->execute();
   $table_section = $statement->fetchAll(PDO::FETCH_COLUMN);
 
-  $column_names = array_merge($table_main, $table_pack, $table_product, $table_section);
+  $column_names = array_merge($table_main, $table_pack, $table_compartment, $table_product, $table_section);
 
   if(!isset($_POST['table']) || !isset($_POST['entry']) || !isset($_POST['value']) || !isset($_POST['id']) || !isset($_POST['securitycode'])) {
     die("Es wurden nicht alle Werte übermittelt.");
@@ -36,7 +40,7 @@
     die("Falscher Securitycode.");
   }
 
-  if ($_POST['table'] != 'main' && $_POST['table'] != 'pack' && $_POST['table'] != 'product' && $_POST['table'] != 'section') {
+  if ($_POST['table'] != 'main' && $_POST['table'] != 'pack' && $_POST['table'] != 'compartment' && $_POST['table'] != 'product' && $_POST['table'] != 'section') {
     die("Falscher 'table' Wert.");
   } else {
     $table = $_POST['table'];

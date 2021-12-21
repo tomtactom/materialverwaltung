@@ -40,7 +40,7 @@
                   $pack_name = $pdo->prepare("SELECT `pack_name` FROM `pack` WHERE `row_id` = ".$row['pack_id']);
                   $pack_name->execute();
                 ?>
-                <div class='edit' id="pack_<?php echo $row['row_id']; ?>"><?php echo $pack_name->fetch()['pack_name']; ?></div>
+                <div class="edit"><?php echo $pack_name->fetch()['pack_name']; ?></div>
                 <select name="change_pack" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="pack_id" table="main" rowid="<?php echo $row['row_id']; ?>">
                   <?php
                     $pack_statement = $pdo->prepare("SELECT * FROM `pack` ORDER BY `row_id`");
@@ -53,7 +53,23 @@
               </td>
 
               <!-- Fach <select> -->
-              <td></td>
+              <td>
+                <?php
+                  $compartment_name = $pdo->prepare("SELECT `compartment_name` FROM `compartment` WHERE `row_id` = ".$row['compartment_id']);
+                  $compartment_name->execute();
+                ?>
+                <div class="edit"><?php echo $compartment_name->fetch()['compartment_name']; ?></div>
+                <select name="change_compartment" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="compartment_id" table="main" rowid="<?php echo $row['row_id']; ?>">
+                  <?php
+                    $compartment_statement = $pdo->prepare("SELECT * FROM `pack` ORDER BY `row_id`");
+                    $compartment_result = $compartment_statement->execute();
+                    while($compartment_row = $compartment_statement->fetch()) {
+                  ?>
+                  <option value="<?php echo $compartment_row['row_id']; ?>" called="<?php echo $compartment_row['compartment_name']; ?>" <?php if ($compartment_row['row_id'] == $row['compartment_id']) { echo 'selected'; } ?>><?php echo $compartment_row['compartment_name']; ?></option>
+                  <?php } ?>
+                </select>
+              </td>
+
               <td><?php echo $row['number']; ?></td>
               <!-- Produkt -->
               <td>
