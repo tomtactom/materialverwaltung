@@ -12,7 +12,7 @@ $(document).ready(function(){
  $(".txtedit").focusout(function(){
 
   // Get edit id, field name and value
-  var field_name = $(this).attr('called');
+  var field_name = $('option:selected', this).attr('called');
 
   var table = this.getAttribute('table');
   var entry = this.getAttribute('entry');
