@@ -2,14 +2,14 @@
   $options['sitetitle'] = 'Materialverwaltung';
   require('./inc/header.inc.php');
 ?>
-      <h1>Suche1</h1>
+      <h1>Suche</h1>
 
       <p>Beispiel für ein einfaches Suchformular.</p>
 
       <!-- Suchformular mit Eingabefeld und Button -->
       <form class="well form-search">
         <input type="text" class="input-medium search-query"/>
-        <button type="submit" class="btn btn-primary">Search</button>
+        <button type="submit" class="btn btn-primary">Suchen</button>
       </form>
 
       <h2>Ergebnisse</h2>
