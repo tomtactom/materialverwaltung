@@ -16,7 +16,7 @@ $(document).ready(function(){
   var field_name = $('option:selected', this).attr('called');
   var table = this.getAttribute('table');
   var entry = this.getAttribute('entry');
-  var value = this.value.split("_", 2);
+  var value = this.value;
   var id = this.getAttribute('rowid');
   var securitycode = this.getAttribute('securitycode');
 
@@ -27,13 +27,11 @@ $(document).ready(function(){
   $(this).prev('.edit').show();
   $(this).prev('.edit').text(field_name);
 
-  console.log(field_name);
-
   // Sending AJAX request
   $.ajax({
    url: 'update.php',
    type: 'post',
-   data: { table:table, entry:entry, value:value[0], id:id, securitycode:securitycode },
+   data: { table:table, entry:entry, value:value, id:id, securitycode:securitycode },
    success:function(response){
       if(response) {
          console.log('Erfolgreich gespeichert.');
