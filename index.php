@@ -54,7 +54,7 @@
                   <option value="<?php echo $pack_row['row_id']; ?>_<?php echo $pack_row['pack_name']; ?>" <?php if ($pack_row['row_id'] == $row['pack_id']) { echo 'selected'; } ?>><?php echo $pack_row['pack_name']; ?></option>
                   <?php } ?>
                 </select>
-                
+                <?php //echo $pack_name->fetch()['pack_name']; ?>
               </td>
 
               <!-- Fach <select> -->
