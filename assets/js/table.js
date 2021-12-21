@@ -14,7 +14,7 @@ $(document).ready(function() {
 
     // Get edit id, field name and value
     var field_name = $('option:selected', this).attr('called');
-    if (typeof attr !== 'undefined' && attr !== false) {
+    if (typeof field_name !== 'undefined' && field_name !== false) {
       var field_name = this.value;
     }
 
@@ -30,6 +30,8 @@ $(document).ready(function() {
     // Hide and Change Text of the container with input element
     $(this).prev('.edit').show();
     $(this).prev('.edit').text(field_name);
+
+    console.log(field_name);
 
     // Sending AJAX request
     $.ajax({
