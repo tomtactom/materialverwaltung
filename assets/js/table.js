@@ -16,11 +16,13 @@ $(document).ready(function() {
     var field_name = $('option:selected', this).attr('called');
     if ($(this).attr('type')) {
       field_name = String(this.value);
+
       if (field_name == "0" || field_name == false) {
         if ("number" == $(this).attr('type')) {
           field_name = "1";
           this.value = "1";
         }
+
         if ("date" == $(this).attr('type')) {
           field_name = "<i>Kein Ablaufdatum</i>";
         }
@@ -39,8 +41,6 @@ $(document).ready(function() {
     // Hide and Change Text of the container with input element
     $(this).prev('.edit').show();
     $(this).prev('.edit').html(field_name);
-
-    console.log(field_name);
 
     // Sending AJAX request
     $.ajax({
