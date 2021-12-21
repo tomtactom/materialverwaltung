@@ -38,7 +38,7 @@ $(document).ready(function() {
 
     // Hide and Change Text of the container with input element
     $(this).prev('.edit').show();
-    $(this).prev('.edit').text(field_name);
+    $(this).prev('.edit').html(field_name);
 
     console.log(field_name);
 
