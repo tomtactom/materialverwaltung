@@ -33,7 +33,6 @@
     					$result = $main_statement->execute();
     					$count = 1;
     						while($row = $main_statement->fetch()) {
-                  print_r($row);
                 $pack_name = $pdo->prepare("SELECT `pack_name` FROM `pack` WHERE `row_id` = ".$row['pack_id']);
                 $product_name = $pdo->prepare("SELECT `product_name` FROM `product` WHERE `row_id` = ".$row['product_id']);
         				$pack_name->execute();
@@ -53,7 +52,7 @@
                 </select>
                 <?php echo $pack_name->fetch()['pack_name']; ?>
               </td>
-              <td><?php if($row['compartment_name'] == false) { echo 'Allgemein'; } else { echo $row['compartment_name']; } ?></td>
+              <td></td>
               <td><?php echo $row['number']; ?></td>
               <td><?php echo $product_name->fetch()['product_name']; ?></td>
               <td><?php echo $row['expiry_date']; ?></td>
