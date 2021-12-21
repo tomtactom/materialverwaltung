@@ -15,7 +15,7 @@ $(document).ready(function() {
     // Get edit id, field name and value
     var field_name = $('option:selected', this).attr('called');
     if ($(this).attr('type')) {
-      field_name = this.value;
+      field_name = str(this.value);
       if ("number" == $(this).attr('type')) {
         if (field_name == "0" || field_name == false) {
           field_name = "1";
@@ -26,7 +26,7 @@ $(document).ready(function() {
 
     var table = this.getAttribute('table');
     var entry = this.getAttribute('entry');
-    var value = this.value;
+    var value = str(this.value);
     var id = this.getAttribute('rowid');
     var securitycode = this.getAttribute('securitycode');
 
