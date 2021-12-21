@@ -22,6 +22,9 @@ $(document).ready(function() {
           this.value = "1";
         }
       }
+      if ("date" == $(this).attr('type')) {
+        field_name = "<i>Kein Ablaufdatum</i>";
+      }
     }
 
     var table = this.getAttribute('table');
