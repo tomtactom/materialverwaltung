@@ -59,7 +59,7 @@
   } else {
     $id = $_POST['id'];
   }
-  $statement = $pdo->prepare("UPDATE `".$table."` SET `".$entry."` = ".$value." WHERE `row_id` = ".$id);
+  $statement = $pdo->prepare("UPDATE `".$table."` SET `".$entry."` = '".$value."' WHERE `row_id` = ".$id);
   $result = $statement->execute();
   if ($result == true) {
    echo 1;
