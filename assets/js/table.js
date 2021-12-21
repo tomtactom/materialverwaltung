@@ -16,14 +16,14 @@ $(document).ready(function() {
     var field_name = $('option:selected', this).attr('called');
     if ($(this).attr('type')) {
       field_name = String(this.value);
-      if ("number" == $(this).attr('type')) {
-        if (field_name == "0" || field_name == false) {
+      if (field_name == "0" || field_name == false) {
+        if ("number" == $(this).attr('type')) {
           field_name = "1";
           this.value = "1";
         }
-      }
-      if ("date" == $(this).attr('type')) {
-        field_name = "<i>Kein Ablaufdatum</i>";
+        if ("date" == $(this).attr('type')) {
+          field_name = "<i>Kein Ablaufdatum</i>";
+        }
       }
     }
 
