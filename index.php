@@ -75,14 +75,25 @@
                 <div class="edit"><?php echo $row['number']; ?></div>
                 <input type="number" name="change_number" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="number" table="main" value="<?php echo $row['number']; ?>" rowid="<?php echo $row['row_id']; ?>" min="1" required>
               </td>
-              <!-- Produkt -->
+
+              <!-- Produkt <select> -->
               <td>
                 <?php
                   $product_name = $pdo->prepare("SELECT `product_name` FROM `product` WHERE `row_id` = ".$row['product_id']);
                   $product_name->execute();
                 ?>
-                <?php echo $product_name->fetch()['product_name']; ?>
+                <div class="edit"><?php echo $product_name->fetch()['product_name']; ?></div>
+                <select name="change_product" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="product_id" table="main" rowid="<?php echo $row['row_id']; ?>">
+                  <?php
+                    $product_statement = $pdo->prepare("SELECT * FROM `product` ORDER BY `row_id`");
+                    $product_result = $product_statement->execute();
+                    while($product_row = $product_statement->fetch()) {
+                  ?>
+                  <option value="<?php echo $product_row['row_id']; ?>" called="<?php echo $product_row['product_name']; ?>" <?php if ($product_row['row_id'] == $row['product_id']) { echo 'selected'; } ?>><?php echo $product_row['product_name']; ?></option>
+                  <?php } ?>
+                </select>
               </td>
+
               <td><?php echo $row['expiry_date']; ?></td>
             </tr>
           <?php } ?>
