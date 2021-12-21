@@ -16,6 +16,7 @@ $(document).ready(function() {
     var field_name = $('option:selected', this).attr('called');
     if (typeof field_name !== 'undefined' && field_name !== false) {
       var field_name = this.value;
+      console.log("#####################");
     }
 
     var table = this.getAttribute('table');
