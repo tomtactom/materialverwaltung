@@ -37,7 +37,7 @@
                 $pack_name = $pdo->prepare("SELECT `pack_name` FROM `pack` WHERE `row_id` = ".$row['pack_id']);
                 $pack_name->execute();
 
-                // 
+                //
                 $product_name = $pdo->prepare("SELECT `product_name` FROM `product` WHERE `row_id` = ".$row['product_id']);
         				$product_name->execute();
   					?>
@@ -54,7 +54,7 @@
                   <option value="<?php echo $pack_row['row_id']; ?>_<?php echo $pack_row['pack_name']; ?>" <?php if ($pack_row['row_id'] == $row['pack_id']) { echo 'selected'; } ?>><?php echo $pack_row['pack_name']; ?></option>
                   <?php } ?>
                 </select>
-                <?php echo $pack_name->fetch()['pack_name']; ?>
+                
               </td>
 
               <!-- Fach <select> -->
