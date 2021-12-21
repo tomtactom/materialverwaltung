@@ -7,7 +7,7 @@
   <input name="id" value="1">
   <input name="securitycode" value="<?php echo sha1($config["admin_cookie_hash"]); ?>">
   <input type="submit">
-</form>*/ 
+</form>*/
 
   // Write all columns from table in array
   $statement = $pdo->prepare("DESCRIBE `main`");
@@ -28,9 +28,9 @@
 
   $column_names = array_merge($table_main, $table_pack, $table_product, $table_section);
 
-  /*if(!isset($_POST['table']) || !isset($_POST['entry']) || !isset($_POST['value']) || !isset($_POST['id']) || !isset($_POST['securitycode'])) {
+  if(!isset($_POST['table']) || !isset($_POST['entry']) || !isset($_POST['value']) || !isset($_POST['id']) || !isset($_POST['securitycode'])) {
     die("Es wurden nicht alle Werte übermittelt.");
-  }*/
+  }
 
   if($_POST['securitycode'] != sha1($config["admin_cookie_hash"])) {
     die("Falscher Securitycode.");
