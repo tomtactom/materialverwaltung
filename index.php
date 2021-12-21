@@ -96,7 +96,7 @@
 
               <!-- Anzahl <input type="date">  -->
               <td>
-                <div class="edit"><?php if(empty($row['expiry_date'])) { echo '<i>Kein Ablaufdatum</i>'; } else { echo $row['expiry_date'] } ?></div>
+                <div class="edit"><?php if(empty($row['expiry_date'])) { echo '<i>Kein Ablaufdatum</i>'; } else { echo $row['expiry_date']; } ?></div>
                 <input type="date" name="change_expiry_date" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="expiry_date" table="main" value="<?php echo $row['expiry_date']; ?>" rowid="<?php echo $row['row_id']; ?>">
               </td>
             </tr>
