@@ -52,7 +52,7 @@
     $entry = $_POST['entry'];
   }
 
-  $value = htmlspecialchars($_POST['value']);
+  $value = htmlspecialchars(strval($_POST['value']));
 
   if(!is_numeric($_POST['id'])) {
     die("Fehlerhafte ID.");
