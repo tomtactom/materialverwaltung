@@ -29,10 +29,10 @@
   				</thead>
   				<tbody>
             <?php
-    					$statement = $pdo->prepare("SELECT * FROM `main` ORDER BY `row_id`");
-    					$result = $statement->execute();
+    					$main_statement = $pdo->prepare("SELECT * FROM `main` ORDER BY `row_id`");
+    					$result = $main_statement->execute();
     					$count = 1;
-    						while($row = $statement->fetch()) {
+    						while($row = $main_statement->fetch()) {
                   print_r($row);
                 $pack_name = $pdo->prepare("SELECT `pack_name` FROM `pack` WHERE `row_id` = ".$row['pack_id']);
                 $product_name = $pdo->prepare("SELECT `product_name` FROM `product` WHERE `row_id` = ".$row['product_id']);
