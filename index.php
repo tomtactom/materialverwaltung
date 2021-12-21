@@ -61,7 +61,7 @@
                 <div class="edit"><?php echo $compartment_name->fetch()['compartment_name']; ?></div>
                 <select name="change_compartment" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="compartment_id" table="main" rowid="<?php echo $row['row_id']; ?>">
                   <?php
-                    $compartment_statement = $pdo->prepare("SELECT * FROM `pack` ORDER BY `row_id`");
+                    $compartment_statement = $pdo->prepare("SELECT * FROM `compartment` ORDER BY `row_id`");
                     $compartment_result = $compartment_statement->execute();
                     while($compartment_row = $compartment_statement->fetch()) {
                   ?>
