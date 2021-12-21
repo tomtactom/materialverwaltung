@@ -22,7 +22,6 @@ $(document).ready(function() {
           this.value = "1";
         }
       }
-      console.log("#####################");
     }
 
     var table = this.getAttribute('table');
