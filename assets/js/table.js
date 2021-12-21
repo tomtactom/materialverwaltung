@@ -31,7 +31,7 @@ $(document).ready(function(){
   //document.getElementById('pack_'+id).innerHTML = value[1];
   //document.querySelector("value=['"+value[0]+"_"+value[1]+"']").setAttribute("selected", "1");
 
-  console.log(value);
+  console.log(field_name);
 
 
   var response;
