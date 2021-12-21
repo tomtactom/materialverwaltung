@@ -15,7 +15,7 @@ $(document).ready(function() {
     // Get edit id, field name and value
     var field_name = $('option:selected', this).attr('called');
     if (typeof attr !== 'undefined' && attr !== false) {
-      var field_name = $(this).attr('value');
+      var field_name = this.value;
     }
 
     var table = this.getAttribute('table');
