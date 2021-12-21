@@ -44,7 +44,7 @@
   					<tr>
               <!-- Rucksack/Box - <select> -->
   						<td>
-                <div class='edit' id="pack_<?php echo $row['row_id']; ?>"> <?php echo $pack_name->fetch()['pack_name']; ?></div>
+                <div class='edit' id="pack_<?php echo $row['row_id']; ?>"><?php echo $pack_name->fetch()['pack_name']; ?></div>
                 <select name="change_pack" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="pack_id" table="main" rowid="<?php echo $row['row_id']; ?>">
                   <?php
                     $pack_statement = $pdo->prepare("SELECT * FROM `pack` ORDER BY `row_id`");
