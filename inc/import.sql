@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `compartment` (
 CREATE TABLE IF NOT EXISTS `main` (
 	`row_id` INT NOT NULL AUTO_INCREMENT,
   `pack_id` INT NOT NULL,
-	`compartment_id` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+	`compartment_id` INT CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
 	`number` INT NOT NULL,
   `product_id` INT NOT NULL,
   `expiry_date` VARCHAR(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
