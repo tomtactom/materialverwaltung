@@ -72,7 +72,7 @@
 
               <td>
                 <div class="edit"><?php echo $row['number']; ?></div>
-                <input type="number" name="change_number" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="number" table="main" rowid="<?php echo $row['row_id']; ?>">
+                <input type="number" name="change_number" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="number" table="main" value="<?php echo $row['number']; ?>" rowid="<?php echo $row['row_id']; ?>">
               </td>
               <!-- Produkt -->
               <td>
