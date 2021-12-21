@@ -30,28 +30,34 @@
   				<tbody>
             <?php
     					$main_statement = $pdo->prepare("SELECT * FROM `main` ORDER BY `row_id`");
-    					$result = $main_statement->execute();
+    					$main_result = $main_statement->execute();
     					$count = 1;
-    						while($row = $main_statement->fetch()) {
+    					while($row = $main_statement->fetch()) {
+                //
                 $pack_name = $pdo->prepare("SELECT `pack_name` FROM `pack` WHERE `row_id` = ".$row['pack_id']);
+                $pack_name->execute();
+
+                // 
                 $product_name = $pdo->prepare("SELECT `product_name` FROM `product` WHERE `row_id` = ".$row['product_id']);
-        				$pack_name->execute();
         				$product_name->execute();
   					?>
   					<tr>
+              <!-- Rucksack/Box - <select> -->
   						<td>
                 <div class='edit' id="pack_<?php echo $row['row_id']; ?>"> <?php echo $pack_name->fetch()['pack_name']; ?></div>
                 <select name="change_pack" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="pack_id" table="main" rowid="<?php echo $row['row_id']; ?>">
                   <?php
-                    $statement = $pdo->prepare("SELECT * FROM `pack` ORDER BY `row_id`");
-                    $result = $statement->execute();
-                    while($packs = $statement->fetch()) {
+                    $pack_statement = $pdo->prepare("SELECT * FROM `pack` ORDER BY `row_id`");
+                    $pack_result = $pack_statement->execute();
+                    while($pack_row = $pack_statement->fetch()) {
                   ?>
-                  <option value="<?php echo $packs['row_id']; ?>_<?php echo $packs['pack_name']; ?>" <?php if ($packs['row_id'] == $row['pack_id']) { echo 'selected'; } ?>><?php echo $packs['pack_name']; ?></option>
+                  <option value="<?php echo $pack_row['row_id']; ?>_<?php echo $pack_row['pack_name']; ?>" <?php if ($pack_row['row_id'] == $row['pack_id']) { echo 'selected'; } ?>><?php echo $pack_row['pack_name']; ?></option>
                   <?php } ?>
                 </select>
                 <?php echo $pack_name->fetch()['pack_name']; ?>
               </td>
+
+              <!-- Fach <select> -->
               <td></td>
               <td><?php echo $row['number']; ?></td>
               <td><?php echo $product_name->fetch()['product_name']; ?></td>
