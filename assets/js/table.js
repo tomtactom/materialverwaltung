@@ -17,7 +17,7 @@ $(document).ready(function() {
     if ($(this).attr('type')) {
       field_name = this.value;
       if ("number" == $(this).attr('type')) {
-        if (field_name == "0" || field_name == "") {
+        if (field_name == "0" || field_name == false) {
           field_name = "1";
           this.value = "1";
         }
