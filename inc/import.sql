@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `pack` (
 	`created_by_user_id` SMALLINT DEFAULT NULL,
 	`timestamp_changed` TIMESTAMP NOT NULL ON UPDATE CURRENT_TIMESTAMP,
 	`changed_by_user_id` SMALLINT DEFAULT NULL,
-	PRIMARY KEY (`row_id`)
+PRIMARY KEY (`row_id`)
 );
 
 CREATE TABLE IF NOT EXISTS `compartment` (
