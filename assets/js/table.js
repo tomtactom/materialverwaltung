@@ -49,10 +49,13 @@ $(document).ready(function() {
           product_id: value,
           securitycode: securitycode
         },
-        success: callback
+        success: function(response) {
+          return response
+        },
+        async: false
       });
 
-      console.log("#################" + resp);
+      console.log("#################" + resp.responseText);
 
     }
 
