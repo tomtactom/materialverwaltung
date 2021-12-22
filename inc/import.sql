@@ -3,13 +3,13 @@ CREATE TABLE IF NOT EXISTS `product` (
 	`product_type` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
 	`product_name` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 	`size_or_specification` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-	`packing_degree` TINYINT NOT NULL DEFAULT '0',
+	`packing_degree` TINYINT DEFAULT 0,
 	`din_format` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
 	`description` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
 	`average_price_per_piece` DECIMAL DEFAULT NULL,
-	`timestamp_created` TIMESTAMP NOT NULL,
+	`timestamp_created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	`created_by_user_id` SMALLINT DEFAULT NULL,
-	`timestamp_changed` TIMESTAMP NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+	`timestamp_changed` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	`changed_by_user_id` SMALLINT DEFAULT NULL,
 	PRIMARY KEY (`row_id`)
 );
@@ -21,9 +21,9 @@ CREATE TABLE IF NOT EXISTS `section` (
 	`license_plate` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
 	`description` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
 	`average_price_per_piece` DECIMAL DEFAULT NULL,
-	`timestamp_created` TIMESTAMP NOT NULL,
+	`timestamp_created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	`created_by_user_id` SMALLINT DEFAULT NULL,
-	`timestamp_changed` TIMESTAMP NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+	`timestamp_changed` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	`changed_by_user_id` SMALLINT DEFAULT NULL,
 	PRIMARY KEY (`row_id`)
 );
@@ -35,9 +35,9 @@ CREATE TABLE IF NOT EXISTS `pack` (
 	`pack_name` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 	`din_format` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
 	`description` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-	`timestamp_created` TIMESTAMP NOT NULL,
+	`timestamp_created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	`created_by_user_id` SMALLINT DEFAULT NULL,
-	`timestamp_changed` TIMESTAMP NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+	`timestamp_changed` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	`changed_by_user_id` SMALLINT DEFAULT NULL,
 PRIMARY KEY (`row_id`)
 );
@@ -47,9 +47,9 @@ CREATE TABLE IF NOT EXISTS `compartment` (
 	`compartment_type` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
 	`compartment_name` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 	`description` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-	`timestamp_created` TIMESTAMP NOT NULL,
+	`timestamp_created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	`created_by_user_id` SMALLINT DEFAULT NULL,
-	`timestamp_changed` TIMESTAMP NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+	`timestamp_changed` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	`changed_by_user_id` SMALLINT DEFAULT NULL,
 	PRIMARY KEY (`row_id`)
 );
