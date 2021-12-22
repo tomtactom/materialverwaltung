@@ -57,13 +57,13 @@ CREATE TABLE IF NOT EXISTS `compartment` (
 CREATE TABLE IF NOT EXISTS `main` (
 	`row_id` INT NOT NULL AUTO_INCREMENT,
   `pack_id` INT NOT NULL,
-	`compartment_id` INT CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+	`compartment_id` INT DEFAULT 0,
 	`number` INT NOT NULL,
   `product_id` INT NOT NULL,
   `expiry_date` VARCHAR(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-	`timestamp_created` TIMESTAMP NOT NULL,
+	`timestamp_created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	`created_by_user_id` SMALLINT DEFAULT NULL,
-	`timestamp_changed` TIMESTAMP NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+	`timestamp_changed` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	`changed_by_user_id` SMALLINT DEFAULT NULL,
 	PRIMARY KEY (`row_id`)
 );
