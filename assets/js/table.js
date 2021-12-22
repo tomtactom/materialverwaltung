@@ -41,7 +41,7 @@ $(document).ready(function() {
 
     // GET packing_degree from product_id
     if ("date" == $(this).attr('type')) {
-      var packing_degree
+      var packing_degree;
       $.ajax({
         url: 'information.php',
         type: 'post',
