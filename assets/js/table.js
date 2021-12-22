@@ -43,10 +43,10 @@ $(document).ready(function() {
     if ("date" == $(this).attr('type')) {
 
       var resp = $.ajax({
-        url: 'information.php',
+        url: 'information.php?packing_degree=1',
         type: 'post',
         data: {
-          product_id: value,
+          product_id: id,
           securitycode: securitycode
         },
         success: function(response) {
