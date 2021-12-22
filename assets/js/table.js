@@ -1,5 +1,9 @@
 // Quelle: Yogesh Singh. (2021). Editable Table with jQuery AJAX (Demo 2) [JavaScript]. Makitweb. https://makitweb.com/make-live-editable-table-with-jquery-ajax/.
 
+$('input').on('input', function() {
+  $(this).val($(this).val().replace(/[^0-9]/gi, ''));
+});
+
 $(document).ready(function() {
 
   // Show Input element
@@ -8,17 +12,6 @@ $(document).ready(function() {
     $(this).next('.txtedit').show().focus();
     $(this).hide();
   });
-
-  if ("number" == $(this).attr('type')) {
-    $(this).on('keypress', function(event) {
-      var regex = new RegExp("^[0-9]+$");
-      var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-      if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-      }
-    });
-  }
 
   // Save data
   $(".txtedit").focusout(function() {
