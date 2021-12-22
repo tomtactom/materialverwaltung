@@ -9,6 +9,17 @@ $(document).ready(function() {
     $(this).hide();
   });
 
+  if ("number" == $(this).attr('type')) {
+    $(this).on('keypress', function(event) {
+      var regex = new RegExp("^[0-9]+$");
+      var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+      if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+      }
+    });
+  }
+
   // Save data
   $(".txtedit").focusout(function() {
 
@@ -27,17 +38,6 @@ $(document).ready(function() {
           field_name = "<i>Kein Ablaufdatum</i>";
         }
       }
-    }
-
-    if ("number" == $(this).attr('type')) {
-      this.on('keypress', function(event) {
-        var regex = new RegExp("^[0-9]+$");
-        var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-        if (!regex.test(key)) {
-          event.preventDefault();
-          return false;
-        }
-      });
     }
 
     var table = this.getAttribute('table');
