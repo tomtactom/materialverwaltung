@@ -41,19 +41,17 @@ $(document).ready(function() {
 
     // GET packing_degree from product_id
     if ("date" == $(this).attr('type')) {
-      $.ajax({
+      var resp = $.ajax({
         url: 'information.php',
         type: 'post',
         data: {
           product_id: value,
           securitycode: securitycode
         },
-        success: function(response) {
-          response;
-        }
-        $ret = response;
+        success: response;
+        return response;
       });
-      console.log("#################" + $ret);
+      console.log("#################" + resp);
 
     }
 
