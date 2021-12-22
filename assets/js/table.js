@@ -49,9 +49,7 @@ $(document).ready(function() {
           product_id: value,
           securitycode: securitycode
         },
-        success: function(response) {
-          packing_degree = response;
-        }
+        success: packing_degree;
       });
       console.log("#################" + packing_degree);
     }
