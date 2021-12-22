@@ -48,9 +48,9 @@ $(document).ready(function() {
           product_id: value,
           securitycode: securitycode
         },
-        success: response;
-        return response;
+        success: callback;
       });
+
       console.log("#################" + resp);
 
     }
