@@ -42,7 +42,7 @@ $(document).ready(function() {
     // GET packing_degree from product_id
     if ("date" == $(this).attr('type')) {
 
-      var resp = $.ajax({
+      var packing_degree = $.ajax({
         url: 'information.php?packing_degree=1',
         type: 'post',
         data: {
@@ -54,9 +54,12 @@ $(document).ready(function() {
         },
         async: false
       });
-
-      console.log("#################" + resp.responseText);
-
+      console.log("packing_degree → " + packing_degree.responseText);
+      if (packing_degree == "2" || packing_degree == "3" || packing_degree == "4") {
+        if (String(this.value) == "0" || String(this.value) == false) {
+          exit();
+        }
+      }
     }
 
     // Get edit id, field name and value
