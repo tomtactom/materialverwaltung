@@ -30,8 +30,32 @@ $(document).ready(function() {
     $(this).hide();
   });
 
-  // Save data
   $(".txtedit").focusout(function() {
+
+    var table = this.getAttribute('table');
+    var entry = this.getAttribute('entry');
+    var value = String(this.value);
+    var id = this.getAttribute('rowid');
+    var securitycode = this.getAttribute('securitycode');
+
+
+    // GET packing_degree from product_id
+    if ("date" == $(this).attr('type')) {
+      var packing_degree = $.ajax({
+        url: 'information.php',
+        type: 'post',
+        data: {
+          product_id: value,
+          securitycode: securitycode
+        },
+        success: function(response) {
+          return response;
+        }
+      });
+
+      console.log(packing_degree);
+
+    }
 
     // Get edit id, field name and value
     var field_name = $('option:selected', this).attr('called');
@@ -49,12 +73,6 @@ $(document).ready(function() {
         }
       }
     }
-
-    var table = this.getAttribute('table');
-    var entry = this.getAttribute('entry');
-    var value = String(this.value);
-    var id = this.getAttribute('rowid');
-    var securitycode = this.getAttribute('securitycode');
 
     // Hide Input element
     $(this).hide();
