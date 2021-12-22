@@ -14,6 +14,10 @@
 
       <h2>Ergebnisse</h2>
 
+      <div class="alert alert-warning alert-dismissible fade show" role="alert" style="display:none;">
+        <p id="warning_alertext"></p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
       <!-- Tabelle mit abwechselnder Zellenhintergrundfarbe und Außenrahmen -->
       <div class="table-scrollable">
         <table class="table table-striped table-bordered">
