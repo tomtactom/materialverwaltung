@@ -1,6 +1,6 @@
 // Quelle: Yogesh Singh. (2021). Editable Table with jQuery AJAX (Demo 2) [JavaScript]. Makitweb. https://makitweb.com/make-live-editable-table-with-jquery-ajax/.
 
-$('input').on('input', function() {
+$(".txtedit").on('input', function() {
   $(this).val($(this).val().replace(/[^0-9]/gi, ''));
 });
 
