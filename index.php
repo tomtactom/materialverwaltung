@@ -14,8 +14,8 @@
 
       <h2>Ergebnisse</h2>
 
-      <div class="alert alert-warning alert-dismissible fade show" role="alert" style="display:none;">
-        <p id="warning_alertext"></p>
+      <div id="warning_alertblock" class="alert alert-warning alert-dismissible fade show" role="alert" style="display:none;">
+        <p id="warning_alerttext"></p>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
       <!-- Tabelle mit abwechselnder Zellenhintergrundfarbe und Außenrahmen -->

@@ -60,6 +60,8 @@ $(document).ready(function() {
         if (String(this.value) == "0" || String(this.value) == false) {
           $(this).hide();
           $(this).prev('.edit').show();
+          $('#warning_alertblock').attr('style', 'display:block;');
+          $('#warning_alertblock p').html("Das gewählte Produkt benötigt ein Ablaufdatum.");
           return false;
         }
       }
