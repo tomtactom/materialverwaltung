@@ -1,5 +1,19 @@
 // Quelle: Yogesh Singh. (2021). Editable Table with jQuery AJAX (Demo 2) [JavaScript]. Makitweb. https://makitweb.com/make-live-editable-table-with-jquery-ajax/.
 
+$(function() {
+  $('input[type="date"]').datepicker({
+    dateFormat: 'yy-mm-dd',
+    defaultDate: -1,
+    minDate: new Date(2011, 03, 03),
+    maxDate: +0,
+    firstDay: 1,
+    changeMonth: true,
+    changeYear: true
+  });
+});
+
+
+
 $(document).ready(function() {
 
   $('input[type="number"]').bind('keydown', function(event) {
@@ -22,19 +36,6 @@ $(document).ready(function() {
         break;
     }
   });
-
-
-  $('input[type="date"]').datepicker({
-    changeYear: true,
-    minDate: '-3M',
-    maxDate: '+28D',
-  });
-
-
-
-
-
-
 
   // Show Input element
   $('.edit').click(function() {
