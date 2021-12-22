@@ -60,8 +60,8 @@ $(document).ready(function() {
         if (String(this.value) == "0" || String(this.value) == false) {
           $(this).hide();
           $(this).prev('.edit').show();
-          $('#warning_alertblock').attr('style', 'display:block;');
-          $('#warning_alertblock p').html("Das gewählte Produkt benötigt ein Ablaufdatum.");
+          var alertmessage = "Dieses Produkt benötigt ein Ablaufdatum.";
+          $('#alertarea').html('<div id="warning_alertblock" class="alert alert-warning alert-dismissible fade show" role="alert" style="display:none;"><p>' + alertmessage + '</p><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';)
           return false;
         }
       }
