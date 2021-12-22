@@ -1,4 +1,5 @@
-sss<?php
+<?php
+print_r($_POST);
 require('./inc/config.inc.php');
 if(isset($_POST['securitycode']) && $_POST['securitycode'] == sha1($config["admin_cookie_hash"])) {
 
