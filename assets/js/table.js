@@ -23,6 +23,19 @@ $(document).ready(function() {
     }
   });
 
+
+  $('input[type="date"]').datepicker({
+    changeYear: true,
+    minDate: '-3M',
+    maxDate: '+28D',
+  });
+
+
+
+
+
+
+
   // Show Input element
   $('.edit').click(function() {
     $('.txtedit').hide();
