@@ -11,13 +11,9 @@
         <input type="text" class="input-medium search-query"/>
         <button type="submit" class="btn btn-primary">Suchen</button>
       </form>
+      <div id="alertarea"></div>
 
       <h2>Ergebnisse</h2>
-
-      <div id="warning_alertblock" class="alert alert-warning alert-dismissible fade show" role="alert" style="display:none;">
-        <p></p>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
       <!-- Tabelle mit abwechselnder Zellenhintergrundfarbe und Außenrahmen -->
       <div class="table-scrollable">
         <table class="table table-striped table-bordered">
