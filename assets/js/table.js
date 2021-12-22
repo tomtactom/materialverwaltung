@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
 
-  $(".txtedit").alphanum({
+  $("input").alphanum({
     allow: "0123456789",
     allowUpper: false
   });
