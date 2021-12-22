@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
 
-  $('input').bind('keydown', function(event) {
+  $('input[type="number"]').bind('keydown', function(event) {
     switch (event.keyCode) {
       case 8: // Backspace
       case 9: // Tab
