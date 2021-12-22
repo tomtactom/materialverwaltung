@@ -41,7 +41,8 @@ $(document).ready(function() {
 
     // GET packing_degree from product_id
     if ("date" == $(this).attr('type')) {
-      var packing_degree = $.ajax({
+      var packing_degree
+      $.ajax({
         url: 'information.php',
         type: 'post',
         data: {
@@ -49,12 +50,10 @@ $(document).ready(function() {
           securitycode: securitycode
         },
         success: function(response) {
-          return response;
+          packing_degree = response;
         }
       });
-
-      console.log(packing_degree);
-
+      console.log("#################" + packing_degree);
     }
 
     // Get edit id, field name and value
