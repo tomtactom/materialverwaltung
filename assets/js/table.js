@@ -61,7 +61,7 @@ $(document).ready(function() {
           $(this).hide();
           $(this).prev('.edit').show();
           var alertmessage = "Dieses Produkt benötigt ein Ablaufdatum.";
-          $('#alertarea').html('<div id="warning_alertblock" class="alert alert-warning alert-dismissible fade show" role="alert" style="display:none;"><p>' + alertmessage + '</p><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';)
+          $('#alertarea').html('<div id="warning_alertblock" class="alert alert-warning alert-dismissible fade show" role="alert" style="display:none;"><p>' + alertmessage + '</p><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
           return false;
         }
       }
