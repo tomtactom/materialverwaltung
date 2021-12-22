@@ -48,10 +48,10 @@ $(document).ready(function() {
           product_id: value,
           securitycode: securitycode
         },
-        success: responseText,
+        success: packing_degree,
         async: false
       });
-      console.log("#################" + packing_degree.responseText);
+      console.log("#################" + packing_degree.response);
     }
 
     // Get edit id, field name and value
