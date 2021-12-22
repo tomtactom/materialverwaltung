@@ -55,7 +55,7 @@ $(document).ready(function() {
         async: false
       });
       console.log("packing_degree → " + packing_degree.responseText);
-      if (packing_degree == "2" || packing_degree == "3" || packing_degree == "4") {
+      if (packing_degree.responseText == "2" || packing_degree.responseText == "3" || packing_degree.responseText == "4") {
         if (String(this.value) == "0" || String(this.value) == false) {
           exit();
         }
