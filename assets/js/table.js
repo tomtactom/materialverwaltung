@@ -1,6 +1,7 @@
 // Quelle: Yogesh Singh. (2021). Editable Table with jQuery AJAX (Demo 2) [JavaScript]. Makitweb. https://makitweb.com/make-live-editable-table-with-jquery-ajax/.
 
 $(document).ready(function() {
+  var next = true;
 
   $('input[type="number"]').bind('keydown', function(event) {
     switch (event.keyCode) {
@@ -59,55 +60,57 @@ $(document).ready(function() {
         if (String(this.value) == "0" || String(this.value) == false) {
           $(this).hide();
           $(this).prev('.edit').show();
-          break;
+          next = false;
         }
       }
     }
 
-    // Get edit id, field name and value
-    var field_name = $('option:selected', this).attr('called');
-    if ($(this).attr('type')) {
-      field_name = String(this.value);
+    if (next = true) {
+      // Get edit id, field name and value
+      var field_name = $('option:selected', this).attr('called');
+      if ($(this).attr('type')) {
+        field_name = String(this.value);
 
-      if (field_name == "0" || field_name == false) {
-        if ("number" == $(this).attr('type')) {
-          field_name = "1";
-          this.value = "1";
-        }
+        if (field_name == "0" || field_name == false) {
+          if ("number" == $(this).attr('type')) {
+            field_name = "1";
+            this.value = "1";
+          }
 
-        if ("date" == $(this).attr('type')) {
-          field_name = "<i>Kein Ablaufdatum</i>";
+          if ("date" == $(this).attr('type')) {
+            field_name = "<i>Kein Ablaufdatum</i>";
+          }
         }
       }
+
+      // Hide Input element
+      $(this).hide();
+
+      // Hide and Change Text of the container with input element
+      $(this).prev('.edit').show();
+      $(this).prev('.edit').html(field_name);
+
+      // Sending AJAX request
+      $.ajax({
+        url: 'update.php',
+        type: 'post',
+        data: {
+          table: table,
+          entry: entry,
+          value: value,
+          id: id,
+          securitycode: securitycode
+        },
+        success: function(response) {
+          if (response) {
+            console.log('Erfolgreich gespeichert.');
+            console.log(response);
+          } else {
+            console.log("Nicht gespeichert.");
+            console.log(response);
+          }
+        }
+      });
     }
-
-    // Hide Input element
-    $(this).hide();
-
-    // Hide and Change Text of the container with input element
-    $(this).prev('.edit').show();
-    $(this).prev('.edit').html(field_name);
-
-    // Sending AJAX request
-    $.ajax({
-      url: 'update.php',
-      type: 'post',
-      data: {
-        table: table,
-        entry: entry,
-        value: value,
-        id: id,
-        securitycode: securitycode
-      },
-      success: function(response) {
-        if (response) {
-          console.log('Erfolgreich gespeichert.');
-          console.log(response);
-        } else {
-          console.log("Nicht gespeichert.");
-          console.log(response);
-        }
-      }
-    });
   });
 });
