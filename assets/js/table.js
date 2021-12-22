@@ -51,7 +51,7 @@ $(document).ready(function() {
         success: packing_degree,
         async: false
       });
-      console.log(packing_degree);
+      console.log("#################" + packing_degree.responseText);
     }
 
     // Get edit id, field name and value
