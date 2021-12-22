@@ -60,7 +60,7 @@ $(document).ready(function() {
         if (String(this.value) == "0" || String(this.value) == false) {
           $(this).hide();
           $(this).prev('.edit').show();
-          next = false;
+          return false;
         }
       }
     }
