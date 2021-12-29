@@ -75,7 +75,7 @@
                 <div class="edit"
                   selected_row_id="<?php echo $selected_compartment_row['row_id']; ?>"
                   selected_compartment_type="<?php echo $selected_compartment_row['compartment_type']; ?>"
-                  selected_compartment_name ="<?php echo $selected_compartment_row['compartment_name ']; ?>"
+                  selected_compartment_name ="<?php echo $selected_compartment_row['compartment_name']; ?>"
                   selected_description="<?php echo $selected_compartment_row['description']; ?>"
                   selected_timestamp_created="<?php echo $selected_compartment_row['timestamp_created']; ?>"
                   selected_created_by_user_id="<?php echo $selected_compartment_row['created_by_user_id']; ?>"
