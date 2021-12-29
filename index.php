@@ -37,10 +37,22 @@
               <!-- Rucksack/Box - <select> -->
   						<td>
                 <?php
-                  $pack_name = $pdo->prepare("SELECT `pack_name` FROM `pack` WHERE `row_id` = ".$row['pack_id']);
-                  $pack_name->execute();
+                  $pack_row = $pdo->prepare("SELECT * FROM `pack` WHERE `row_id` = ".$row['pack_id']);
+                  $pack_row->execute();
+                  $selected_pack_row = $pack_row->fetch();
+                  $pack_row = false;
                 ?>
-                <div class="edit"><?php echo $pack_name->fetch()['pack_name']; ?></div>
+                <div class="edit"
+                  selected_section_id="<?php echo $selected_pack_row['section_id']; ?>"
+                  selected_pack_type="<?php echo $selected_pack_row['pack_type']; ?>"
+                  selected_pack_name="<?php echo $selected_pack_row['pack_name']; ?>"
+                  selected_din_format="<?php echo $selected_pack_row['din_format']; ?>"
+                  selected_description="<?php echo $selected_pack_row['description']; ?>"
+                  selected_timestamp_created="<?php echo $selected_pack_row['timestamp_created']; ?>"
+                  selected_created_by_user_id="<?php echo $selected_pack_row['created_by_user_id']; ?>"
+                  selected_timestamp_changed="<?php echo $selected_pack_row['timestamp_changed']; ?>"
+                  selected_changed_by_user_id="<?php echo $selected_pack_row['changed_by_user_id']; ?>"
+                ><?php echo $selected_pack_row['pack_name']; ?></div>
                 <select name="change_pack" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="pack_id" table="main" rowid="<?php echo $row['row_id']; ?>">
                   <?php
                     $pack_statement = $pdo->prepare("SELECT * FROM `pack` ORDER BY `row_id`");
