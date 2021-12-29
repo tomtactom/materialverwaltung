@@ -42,7 +42,7 @@ $(document).ready(function() {
 
     // Rucksack/Box (pack)
     if (entry == 'pack_id') {
-      var selected_row_id = $(this).prev(".edit").attr('selected_row_id');
+      var selected_row_id = $(this).prev(".edit").attr('selected_row_id') + "xD";
       console.log(selected_row_id);
     }
 
