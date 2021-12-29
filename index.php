@@ -102,10 +102,24 @@
               <!-- Produkt <select> -->
               <td>
                 <?php
-                  $product_name = $pdo->prepare("SELECT `product_name` FROM `product` WHERE `row_id` = ".$row['product_id']);
-                  $product_name->execute();
+                  $product_row = $pdo->prepare("SELECT * FROM `product` WHERE `row_id` = ".$row['product_id']);
+                  $product_row->execute();
+                  $selected_product_row = $product_row->fetch();
                 ?>
-                <div class="edit"><?php echo $product_name->fetch()['product_name']; ?></div>
+                <div class="edit"
+                  selected_row_id="<?php echo $selected_product_row['row_id']; ?>"
+                  selected_product_type="<?php echo $selected_product_row['product_type']; ?>"
+                  selected_product_name="<?php echo $selected_product_row['product_name']; ?>"
+                  selected_size_or_specification="<?php echo $selected_product_row['size_or_specification']; ?>"
+                  selected_packing_degree="<?php echo $selected_product_row['packing_degree']; ?>"
+                  selected_din_format="<?php echo $selected_product_row['din_format']; ?>"
+                  selected_description="<?php echo $selected_product_row['description']; ?>"
+                  selected_average_price_per_piece="<?php echo $selected_product_row['average_price_per_piece']; ?>"
+                  selected_timestamp_created="<?php echo $selected_product_row['timestamp_created']; ?>"
+                  selected_created_by_user_id="<?php echo $selected_product_row['created_by_user_id']; ?>"
+                  selected_timestamp_changed="<?php echo $selected_product_row['timestamp_changed']; ?>"
+                  selected_changed_by_user_id="<?php echo $selected_product_row['changed_by_user_id']; ?>"
+                ><?php echo $selected_product_row['product_name']; ?></div>
                 <select name="change_product" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="product_id" table="main" rowid="<?php echo $row['row_id']; ?>">
                   <?php
                     $product_statement = $pdo->prepare("SELECT * FROM `product` ORDER BY `row_id`");
