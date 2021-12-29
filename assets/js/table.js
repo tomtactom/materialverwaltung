@@ -40,15 +40,46 @@ $(document).ready(function() {
     var id = this.getAttribute('rowid');
     var securitycode = this.getAttribute('securitycode');
 
+
+    /* ##################### (start) GET information ##################### */
+    // Allgemein
+    var selected_row_id = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_row_id');
+    var selected_description = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_description');
+    var selected_timestamp_created = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_timestamp_created');
+    var selected_created_by_user_id = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_created_by_user_id');
+    var selected_timestamp_changed = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_timestamp_changed');
+    var selected_changed_by_user_id = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_changed_by_user_id');
+
     // Rucksack/Box (pack)
     if (entry == 'pack_id') {
-      var selected_row_id = $(this).prev(".edit").attr('selected_row_id') + "xD";
-      console.log(selected_row_id);
+      var selected_section_id = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_section_id');
+      var selected_pack_type = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_pack_type');
+      var selected_pack_name = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_pack_name');
+      var selected_din_format = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_din_format');
     }
 
+    // Fach (compartment)
+    if (entry == 'compartment_id') {
+      var selected_compartment_type = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_compartment_type');
+      var selected_compartment_name = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_compartment_name');
+    }
+
+    // Produkt (product)
+    if (entry == 'product_id') {
+      var selected_product_type = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_product_type');
+      var selected_product_name = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_product_name');
+      var selected_size_or_specification = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_size_or_specification');
+      var selected_packing_degree = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_packing_degree');
+      var selected_din_format = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_din_format');
+      var selected_average_price_per_piece = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_average_price_per_piece');
+    }
+
+    /* ##################### (end) GET information ##################### */
 
     // GET packing_degree from product_id
     if ("date" == $(this).attr('type')) {
+
+
 
       var packing_degree = $.ajax({
         url: 'information.php?packing_degree=1',
