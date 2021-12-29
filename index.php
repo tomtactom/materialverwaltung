@@ -43,6 +43,7 @@
                   $pack_row = false;
                 ?>
                 <div class="edit"
+                  selected_row_id="<?php echo $selected_pack_row['row_id']; ?>"
                   selected_section_id="<?php echo $selected_pack_row['section_id']; ?>"
                   selected_pack_type="<?php echo $selected_pack_row['pack_type']; ?>"
                   selected_pack_name="<?php echo $selected_pack_row['pack_name']; ?>"
@@ -67,10 +68,20 @@
               <!-- Fach <select> -->
               <td>
                 <?php
-                  $compartment_name = $pdo->prepare("SELECT `compartment_name` FROM `compartment` WHERE `row_id` = ".$row['compartment_id']);
-                  $compartment_name->execute();
+                  $compartment_row = $pdo->prepare("SELECT * FROM `compartment` WHERE `row_id` = ".$row['compartment_id']);
+                  $compartment_row->execute();
+                  $selected_compartment_row = $compartment_row->fetch();
                 ?>
-                <div class="edit"><?php echo $compartment_name->fetch()['compartment_name']; ?></div>
+                <div class="edit"
+                  selected_row_id="<?php echo $selected_compartment_row['row_id']; ?>"
+                  selected_compartment_type="<?php echo $selected_compartment_row['compartment_type']; ?>"
+                  selected_compartment_name ="<?php echo $selected_compartment_row['compartment_name ']; ?>"
+                  selected_description="<?php echo $selected_compartment_row['description']; ?>"
+                  selected_timestamp_created="<?php echo $selected_compartment_row['timestamp_created']; ?>"
+                  selected_created_by_user_id="<?php echo $selected_compartment_row['created_by_user_id']; ?>"
+                  selected_timestamp_changed="<?php echo $selected_compartment_row['timestamp_changed']; ?>"
+                  selected_changed_by_user_id="<?php echo $selected_compartment_row['changed_by_user_id']; ?>"
+                ><?php echo $selected_compartment_row['compartment_name']; ?></div>
                 <select name="change_compartment" class="txtedit" securitycode="<?php echo sha1($config['admin_cookie_hash']); ?>" entry="compartment_id" table="main" rowid="<?php echo $row['row_id']; ?>">
                   <?php
                     $compartment_statement = $pdo->prepare("SELECT * FROM `compartment` ORDER BY `row_id`");
