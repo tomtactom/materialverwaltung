@@ -1,8 +1,9 @@
 // Quelle: Yogesh Singh. (2021). Editable Table with jQuery AJAX (Demo 2) [JavaScript]. Makitweb. https://makitweb.com/make-live-editable-table-with-jquery-ajax/.
 
 $(document).ready(function() {
-  var next = true;
 
+  // Allow only numbers at <input type="number"> fields
+  var next = true;
   $('input[type="number"]').bind('keydown', function(event) {
     switch (event.keyCode) {
       case 8: // Backspace
@@ -38,6 +39,12 @@ $(document).ready(function() {
     var value = String(this.value);
     var id = this.getAttribute('rowid');
     var securitycode = this.getAttribute('securitycode');
+
+    // Rucksack/Box (pack)
+    if (entry == 'pack_id') {
+      var selected_row_id = $(this).prev(".edit").attr('selected_row_id');
+      console.log(selected_row_id);
+    }
 
 
     // GET packing_degree from product_id
