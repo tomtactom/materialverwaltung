@@ -73,7 +73,7 @@ $(document).ready(function() {
       var selected_din_format = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_din_format');
       var selected_average_price_per_piece = $(".txtedit[rowid='" + id + "']").prev(".edit").attr('selected_average_price_per_piece');
     }
-
+    console.log(selected_product_name + "xD123");
     /* ##################### (end) GET information ##################### */
 
     // GET packing_degree from product_id
